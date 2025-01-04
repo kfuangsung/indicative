@@ -15,7 +15,7 @@ Indicative requires [ta-lib-python](https://github.com/TA-Lib/ta-lib-python) ver
 ### Installation
 
 ```bash
-pip install indicative
+pip install indicative-py
 ```
 
 ### [Documentation](https://kfuangsung.github.io/indicative)

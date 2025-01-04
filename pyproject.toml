@@ -3,7 +3,7 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "indicative"
+name = "indicative-py"
 authors = [{ name = "Kachain Fuangsung" }, { email = "kachain.f@outlook.com" }]
 description = "Pipeline-Oriented Technical Analysis Library"
 readme = "README.md"
