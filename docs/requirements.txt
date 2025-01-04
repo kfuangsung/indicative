@@ -1,0 +1,8 @@
+numpy >= 2, < 3
+pandas >= 2, < 3
+TA-Lib >= 0.6, < 1
+multimethod >= 2, < 3
+pydantic >= 2, < 3
+Sphinx>=8, <9
+sphinx-autoapi
+pydata-sphinx-theme
