@@ -239,7 +239,7 @@ class Reverse(SelectMixin[T]):
 
     def __post_init__(self) -> None:
         """Initializes the selection function to reverse the sequence."""
-        self.select = Select(lambda x: reversed(list(x)))
+        self.select = Select(lambda x: list(reversed(list(x))))
 
 
 @dataclass
