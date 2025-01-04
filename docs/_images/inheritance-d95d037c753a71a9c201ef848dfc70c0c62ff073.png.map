@@ -1,0 +1,6 @@
+<map id="inheritance2e2ba5ec2b" name="inheritance2e2ba5ec2b">
+<area shape="rect" id="node1" href="../mixins/index.html#indicative.mixins.AdapterMixin" target="_top" title="A mixin class that provides a `__call__` method to call a stored function." alt="" coords="257,5,366,31"/>
+<area shape="rect" id="node5" href="#indicative.adapters.Select" target="_top" title="Select adapter." alt="" coords="423,31,495,56"/>
+<area shape="rect" id="node2" href="../protocols/index.html#indicative.protocols.AdapterProtocol" target="_top" title="Protocol for adapters." alt="" coords="248,55,375,80"/>
+<area shape="rect" id="node3" title="Base class for protocol classes." alt="" coords="125,55,200,80"/>
+</map>

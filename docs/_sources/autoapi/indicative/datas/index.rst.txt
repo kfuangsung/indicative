@@ -1,0 +1,152 @@
+indicative.datas
+================
+
+.. py:module:: indicative.datas
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.datas.PriceDataPoint
+   indicative.datas.PriceDataArray
+
+
+Module Contents
+---------------
+
+.. py:class:: PriceDataPoint
+
+   A data point representing a trade in a market.
+
+   .. attribute:: timestamp
+
+      The timestamp of the trade.
+
+   .. attribute:: open
+
+      The opening price of the trade.
+
+   .. attribute:: high
+
+      The highest price of the trade.
+
+   .. attribute:: low
+
+      The lowest price of the trade.
+
+   .. attribute:: close
+
+      The closing price of the trade.
+
+   .. attribute:: volume
+
+      The volume of the trade.
+
+
+   .. py:attribute:: timestamp
+      :type:  indicative.types.Timestamp
+
+
+   .. py:attribute:: open
+      :type:  indicative.types.PositiveRealNumber
+
+
+   .. py:attribute:: high
+      :type:  indicative.types.PositiveRealNumber
+
+
+   .. py:attribute:: low
+      :type:  indicative.types.PositiveRealNumber
+
+
+   .. py:attribute:: close
+      :type:  indicative.types.PositiveRealNumber
+
+
+   .. py:attribute:: volume
+      :type:  pydantic.PositiveInt
+
+
+   .. py:property:: fields
+      :type: list[str]
+
+
+      Returns a list of the field names of the data point.
+
+
+.. py:class:: PriceDataArray
+
+   A data structure representing a market price dataset.
+
+   .. attribute:: timestamp
+
+      The timestamps of the trades.
+
+   .. attribute:: open
+
+      The opening prices of the trades.
+
+   .. attribute:: high
+
+      The highest prices of the trades.
+
+   .. attribute:: low
+
+      The lowest prices of the trades.
+
+   .. attribute:: close
+
+      The closing prices of the trades.
+
+   .. attribute:: volume
+
+      The volumes of the trades.
+
+
+   .. py:attribute:: timestamp
+      :type:  indicative.types.ArrayDatetime64
+
+
+   .. py:attribute:: open
+      :type:  indicative.types.ArrayFloat64
+
+
+   .. py:attribute:: high
+      :type:  indicative.types.ArrayFloat64
+
+
+   .. py:attribute:: low
+      :type:  indicative.types.ArrayFloat64
+
+
+   .. py:attribute:: close
+      :type:  indicative.types.ArrayFloat64
+
+
+   .. py:attribute:: volume
+      :type:  indicative.types.ArrayInt64
+
+
+   .. py:property:: fields
+      :type: list[str]
+
+
+      Returns a list of the field names of the data array.
+
+
+   .. py:method:: from_dataframe(df, column_names = DEFAULT_DATAFRAME_COLUMN_NAME_MAPPING)
+      :classmethod:
+
+
+      Creates a PriceDataArray from a pandas.DataFrame.
+
+      :param df: The pandas.DataFrame containing the data.
+      :param column_names: The column names of the fields in the DataFrame,
+                           defaults to DEFAULT_DATAFRAME_COLUMN_NAME_MAPPING.
+
+      :returns: A PriceDataArray object.
+
+
+

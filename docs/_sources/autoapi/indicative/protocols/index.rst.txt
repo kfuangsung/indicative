@@ -1,0 +1,101 @@
+indicative.protocols
+====================
+
+.. py:module:: indicative.protocols
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.protocols.NamedTupleProtocol
+   indicative.protocols.IndicatorProtocol
+   indicative.protocols.AdapterProtocol
+
+
+Module Contents
+---------------
+
+.. py:class:: NamedTupleProtocol
+
+   Bases: :py:obj:`Protocol`
+
+   .. autoapi-inheritance-diagram:: indicative.protocols.NamedTupleProtocol
+      :parts: 1
+      :private-bases:
+
+
+   Protocol for named tuples.
+
+   This protocol defines the methods that a named tuple must implement.
+
+   .. attribute:: _make
+
+      A class method that creates a new instance of the named tuple.
+
+   .. attribute:: _asdict
+
+      A method that returns a dictionary representation of the named tuple.
+
+   .. attribute:: _replace
+
+      A method that returns a new instance of the named tuple with the given
+      keyword arguments.
+
+
+   .. py:method:: _make()
+      :classmethod:
+
+
+
+   .. py:method:: _asdict()
+
+
+   .. py:method:: _replace()
+
+
+.. py:class:: IndicatorProtocol
+
+   Bases: :py:obj:`Protocol`
+
+   .. autoapi-inheritance-diagram:: indicative.protocols.IndicatorProtocol
+      :parts: 1
+      :private-bases:
+
+
+   Protocol for indicators.
+
+   This protocol defines the methods that an indicator must implement.
+
+   .. attribute:: compute
+
+      A method that computes the indicator.
+
+
+   .. py:method:: compute()
+
+
+.. py:class:: AdapterProtocol
+
+   Bases: :py:obj:`Protocol`
+
+   .. autoapi-inheritance-diagram:: indicative.protocols.AdapterProtocol
+      :parts: 1
+      :private-bases:
+
+
+   Protocol for adapters.
+
+   This protocol defines the methods that an adapter must implement.
+
+   .. attribute:: func
+
+      A class variable that is a callable that takes one argument and returns
+      one argument.
+
+
+   .. py:attribute:: func
+      :type:  ClassVar[collections.abc.Callable[[Any], Any]]
+
+

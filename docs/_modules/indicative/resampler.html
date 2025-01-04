@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>indicative.resampler &#8212; Indicative</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/indicative/resampler';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Indicative</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../autoapi/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/kfuangsung/indicative" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../autoapi/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/kfuangsung/indicative" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../indicative.html" class="nav-link">indicative</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">indicative.resampler</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for indicative.resampler</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span> <span class="nn">enum</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Self</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">PositiveInt</span>
+<span class="kn">from</span> <span class="nn">pydantic.dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="kn">from</span> <span class="nn">.datas</span> <span class="kn">import</span> <span class="n">PriceDataArray</span><span class="p">,</span> <span class="n">PriceDataPoint</span>
+<span class="kn">from</span> <span class="nn">.history</span> <span class="kn">import</span> <span class="n">History</span><span class="p">,</span> <span class="n">Record</span>
+<span class="kn">from</span> <span class="nn">.protocols</span> <span class="kn">import</span> <span class="n">NamedTupleProtocol</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.types</span> <span class="kn">import</span> <span class="n">Timestamp</span>
+
+
+<div class="viewcode-block" id="TimeUnit">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.TimeUnit">[docs]</a>
+<span class="k">class</span> <span class="nc">TimeUnit</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">StrEnum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    TimeUnit is an enumeration of time units.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="TimeUnit.SECOND">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.TimeUnit.SECOND">[docs]</a>
+    <span class="n">SECOND</span> <span class="o">=</span> <span class="s2">&quot;second&quot;</span></div>
+
+<div class="viewcode-block" id="TimeUnit.MINUTE">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.TimeUnit.MINUTE">[docs]</a>
+    <span class="n">MINUTE</span> <span class="o">=</span> <span class="s2">&quot;minute&quot;</span></div>
+
+<div class="viewcode-block" id="TimeUnit.HOUR">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.TimeUnit.HOUR">[docs]</a>
+    <span class="n">HOUR</span> <span class="o">=</span> <span class="s2">&quot;hour&quot;</span></div>
+
+<div class="viewcode-block" id="TimeUnit.DAY">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.TimeUnit.DAY">[docs]</a>
+    <span class="n">DAY</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="calc_timedelta">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.calc_timedelta">[docs]</a>
+<span class="k">def</span> <span class="nf">calc_timedelta</span><span class="p">(</span><span class="n">unit</span><span class="p">:</span> <span class="n">TimeUnit</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">PositiveInt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate a pandas Timedelta object.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        unit (TimeUnit): The unit of time for the timedelta.</span>
+<span class="sd">        n (PositiveInt): The number of units for the timedelta.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.Timedelta: A pandas Timedelta object representing the specified duration.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="calc_next_timestamp">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.calc_next_timestamp">[docs]</a>
+<span class="k">def</span> <span class="nf">calc_next_timestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">:</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">timedelta</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the next timestamp given a starting timestamp and a timedelta.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        timestamp (Timestamp): The starting timestamp.</span>
+<span class="sd">        timedelta (pd.Timedelta): The timedelta to add to the timestamp.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.Timestamp: The resulting timestamp after adding the timedelta.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span></div>
+
+
+
+<div class="viewcode-block" id="append_latest">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.append_latest">[docs]</a>
+<span class="k">def</span> <span class="nf">append_latest</span><span class="p">(</span><span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">,</span> <span class="n">input_</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Append the latest PriceDataPoint to the history.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        history (History): The history object to which the input data point will be registered.</span>
+<span class="sd">        input_ (PriceDataPoint): The data point to be appended to the history.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">history</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">input_</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="pop_latest">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.pop_latest">[docs]</a>
+<span class="k">def</span> <span class="nf">pop_latest</span><span class="p">(</span><span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">,</span> <span class="n">input_</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pop the latest data point from the history if it already exists.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        history (History): The history object from which the latest data point will be popped.</span>
+<span class="sd">        input_ (PriceDataPoint): The data point to be compared with the history for uniqueness.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">hist_fields</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">fields</span>
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">input_</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">hist_fields</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">history</span><span class="p">[</span><span class="n">field</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">history</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">pop_latest</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="replace_latest">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.replace_latest">[docs]</a>
+<span class="k">def</span> <span class="nf">replace_latest</span><span class="p">(</span>
+    <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">,</span>
+    <span class="n">input_</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">,</span>
+    <span class="n">next_timestamp</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">,</span>
+    <span class="n">timestamp_field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Replace the latest data point in the history if it&#39;s older than the given next timestamp.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        history (History): The history object from which the latest data point will be popped and appended.</span>
+<span class="sd">        input_ (PriceDataPoint): The data point to be compared with the history for uniqueness.</span>
+<span class="sd">        next_timestamp (pd.Timestamp): The timestamp of the next sample point to be compared with the history.</span>
+<span class="sd">        timestamp_field (str): The field name of the timestamp in the history object.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">last_hist_time</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">history</span><span class="p">[</span><span class="n">timestamp_field</span><span class="p">]</span><span class="o">.</span><span class="n">back</span><span class="p">())</span>
+    <span class="k">while</span> <span class="n">last_hist_time</span> <span class="o">&gt;=</span> <span class="n">input_</span><span class="o">.</span><span class="n">timestamp</span><span class="p">:</span>
+        <span class="n">pop_latest</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">input_</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">history</span><span class="p">[</span><span class="n">timestamp_field</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">last_hist_time</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="n">history</span><span class="p">[</span><span class="n">timestamp_field</span><span class="p">]</span><span class="o">.</span><span class="n">back</span><span class="p">())</span>
+
+    <span class="n">input_</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="n">next_timestamp</span>
+    <span class="k">return</span> <span class="n">append_latest</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">input_</span><span class="p">)</span></div>
+
+
+
+<span class="nd">@dataclass</span>
+<div class="viewcode-block" id="Resampler">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.Resampler">[docs]</a>
+<span class="k">class</span> <span class="nc">Resampler</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A resampler to resample a stream of PriceDataPoint into a fixed interval.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        n (PositiveInt): The number of units for the timedelta.</span>
+<span class="sd">        unit (TimeUnit): The unit of time for the timedelta.</span>
+<span class="sd">        timestamp_field (str): The field name of the timestamp in the history object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Resampler.n">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.Resampler.n">[docs]</a>
+    <span class="n">n</span><span class="p">:</span> <span class="n">PositiveInt</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Resampler.unit">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.Resampler.unit">[docs]</a>
+    <span class="n">unit</span><span class="p">:</span> <span class="n">TimeUnit</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">TimeUnit</span><span class="o">.</span><span class="n">DAY</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Resampler.timestamp_field">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.Resampler.timestamp_field">[docs]</a>
+    <span class="n">timestamp_field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;timestamp&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Resampler.resample">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.Resampler.resample">[docs]</a>
+    <span class="k">def</span> <span class="nf">resample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">,</span> <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Resample a stream of PriceDataPoint into a fixed interval.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            input_ (PriceDataPoint): The data point to be resampled.</span>
+<span class="sd">            history (History): The history object to which the resampled data point will be registered.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_history</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_empty_timestamp</span><span class="p">(</span><span class="n">history</span><span class="p">):</span>
+            <span class="n">append_latest</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">input_</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">latest_timestamp</span> <span class="o">=</span> <span class="n">history</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">timestamp_field</span><span class="p">]</span><span class="o">.</span><span class="n">back</span><span class="p">()</span>
+
+        <span class="n">next_timestamp</span> <span class="o">=</span> <span class="n">latest_timestamp</span>
+        <span class="k">while</span> <span class="n">next_timestamp</span> <span class="o">&lt;</span> <span class="n">input_</span><span class="o">.</span><span class="n">timestamp</span><span class="p">:</span>
+            <span class="n">next_timestamp</span> <span class="o">=</span> <span class="n">calc_next_timestamp</span><span class="p">(</span>
+                <span class="n">next_timestamp</span><span class="p">,</span> <span class="n">calc_timedelta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">input_</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">&gt;</span> <span class="n">latest_timestamp</span><span class="p">:</span>
+            <span class="n">input_</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="n">next_timestamp</span>
+            <span class="n">append_latest</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">input_</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">replace_latest</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">input_</span><span class="p">,</span> <span class="n">next_timestamp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timestamp_field</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Resampler.check_history">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.Resampler.check_history">[docs]</a>
+    <span class="k">def</span> <span class="nf">check_history</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the history object has the timestamp field. If not, register it.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            history (History): The history object to be checked.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">timestamp_field</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">history</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+            <span class="n">history</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">timestamp_field</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Resampler.is_empty_timestamp">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.Resampler.is_empty_timestamp">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_empty_timestamp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the timestamp field of the history object is empty.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            history (History): The history object to be checked.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the timestamp field is empty, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">history</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">timestamp_field</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span></div>
+</div>
+
+
+
+<span class="nd">@dataclass</span>
+<div class="viewcode-block" id="HistoryWithResampler">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler">[docs]</a>
+<span class="k">class</span> <span class="nc">HistoryWithResampler</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Combines a History object with a Resampler for managing and resampling data points.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        history (History): The history object for storing and managing records.</span>
+<span class="sd">        resampler (Resampler): The resampler object used to resample data points.</span>
+
+<span class="sd">    Properties:</span>
+<span class="sd">        records (list[Record[object]]): The list of records in the history.</span>
+<span class="sd">        fields (list[str]): The list of field names in the history.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="HistoryWithResampler.history">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.history">[docs]</a>
+    <span class="n">history</span><span class="p">:</span> <span class="n">History</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">History</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HistoryWithResampler.resampler">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.resampler">[docs]</a>
+    <span class="n">resampler</span><span class="p">:</span> <span class="n">Resampler</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">Resampler</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="HistoryWithResampler.records">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.records">[docs]</a>
+    <span class="k">def</span> <span class="nf">records</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Record</span><span class="p">[</span><span class="nb">object</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets the records from the history.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list[Record[object]]: The records in the history.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">records</span></div>
+
+
+    <span class="nd">@property</span>
+<div class="viewcode-block" id="HistoryWithResampler.fields">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.fields">[docs]</a>
+    <span class="k">def</span> <span class="nf">fields</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets the field names from the history.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list[str]: The field names in the history.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">fields</span></div>
+
+
+<div class="viewcode-block" id="HistoryWithResampler.__getitem__">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.__getitem__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Record</span><span class="p">[</span><span class="nb">object</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Accesses a record by its name.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name (str): The name of the record.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Record[object]: The record associated with the given name.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">name</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="HistoryWithResampler.__or__">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.__or__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Callable</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Allows using the `|` operator for applying a callable to the history.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            other (Callable): The callable to be applied.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Any: The result of applying the callable to the history.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">other</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="HistoryWithResampler.__ror__">
+<a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.__ror__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__ror__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">other</span><span class="p">:</span> <span class="n">PriceDataPoint</span> <span class="o">|</span> <span class="n">PriceDataArray</span> <span class="o">|</span> <span class="n">NamedTupleProtocol</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Allows using the `|` operator to add or resample data points into the history.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            other (PriceDataPoint | PriceDataArray | NamedTupleProtocol | Iterable): The data to be processed.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the type of `other` is unsupported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">PriceDataPoint</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">resampler</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">PriceDataArray</span> <span class="o">|</span> <span class="n">NamedTupleProtocol</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unsupported type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Kachain Fuangsung.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

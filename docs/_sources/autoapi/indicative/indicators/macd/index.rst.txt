@@ -1,0 +1,130 @@
+indicative.indicators.macd
+==========================
+
+.. py:module:: indicative.indicators.macd
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   indicative.indicators.macd.MACD_Return
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.indicators.macd.macd
+   indicative.indicators.macd.MACD
+
+
+Module Contents
+---------------
+
+.. py:class:: macd
+
+   Bases: :py:obj:`tuple`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.macd.macd
+      :parts: 1
+      :private-bases:
+
+
+   .. py:attribute:: macd
+
+
+   .. py:attribute:: macdsignal
+
+
+   .. py:attribute:: macdhist
+
+
+.. py:data:: MACD_Return
+   :type:  TypeAlias
+   :value: list[MACD_Output]
+
+
+.. py:class:: MACD
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.macd.MACD
+      :parts: 1
+      :private-bases:
+
+
+   Moving Average Convergence Divergence (MACD).
+
+   The MACD is a widely used indicator that plots the difference between a
+   short-term and long-term moving average of a security's price. The MACD is
+   calculated by subtracting the long-term moving average from the short-term
+   moving average.
+
+   :param fast_period: The number of bars used to calculate the
+                       fast moving average. Defaults to 12.
+   :type fast_period: PositiveInt
+   :param slow_period: The number of bars used to calculate the
+                       slow moving average. Defaults to 26.
+   :type slow_period: PositiveInt
+   :param signal_period: The number of bars used to calculate the
+                         signal line. Defaults to 9.
+   :type signal_period: PositiveInt
+
+   :returns:
+
+             A list of namedtuples containing the MACD, MACD signal and
+                 MACD histogram values.
+   :rtype: MACD_Return
+
+
+   .. py:attribute:: fast_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: slow_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: signal_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: compute(close)
+
+      Compute the MACD.
+
+      :param close: A numpy array of close prices.
+      :type close: Array
+
+      :returns:
+
+                A list of namedtuples containing the MACD, MACD signal
+                    and MACD histogram values.
+      :rtype: MACD_Return
+
+
+
+   .. py:method:: _(rec)
+
+      Compute the MACD.
+
+      :param rec: A Record object.
+      :type rec: Record
+
+      :returns:
+
+                A list of namedtuples containing the MACD, MACD signal
+                    and MACD histogram values.
+      :rtype: MACD_Return
+
+
+

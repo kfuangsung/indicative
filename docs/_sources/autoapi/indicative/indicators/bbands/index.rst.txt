@@ -1,0 +1,133 @@
+indicative.indicators.bbands
+============================
+
+.. py:module:: indicative.indicators.bbands
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   indicative.indicators.bbands.BBANDS_Return
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.indicators.bbands.bbands
+   indicative.indicators.bbands.BBANDS
+
+
+Module Contents
+---------------
+
+.. py:class:: bbands
+
+   Bases: :py:obj:`tuple`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.bbands.bbands
+      :parts: 1
+      :private-bases:
+
+
+   .. py:attribute:: upperband
+
+
+   .. py:attribute:: middleband
+
+
+   .. py:attribute:: lowerband
+
+
+.. py:data:: BBANDS_Return
+   :type:  TypeAlias
+   :value: list[BBANDS_Output]
+
+
+.. py:class:: BBANDS
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.bbands.BBANDS
+      :parts: 1
+      :private-bases:
+
+
+   Bollinger Bands (BBANDS) indicator.
+
+   .. attribute:: timeperiod
+
+      The number of periods for the moving average.
+
+      :type: PositiveInt
+
+   .. attribute:: nbdevup
+
+      The number of standard deviations above the moving average.
+
+      :type: PositiveInt
+
+   .. attribute:: nbdevdn
+
+      The number of standard deviations below the moving average.
+
+      :type: PositiveInt
+
+   .. attribute:: matype
+
+      The type of moving average to use.
+
+      :type: MA_Type
+
+
+   .. py:attribute:: timeperiod
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: nbdevup
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: nbdevdn
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: matype
+      :type:  indicative.enums.MA_Type
+      :value: None
+
+
+
+   .. py:method:: compute(close)
+
+      Computes the Bollinger Bands for a given array of closing prices.
+
+      :param close: An array of closing prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the upper, middle, and lower bands.
+      :rtype: BBANDS_Return
+
+
+
+   .. py:method:: _(rec)
+
+      Computes the Bollinger Bands for a given record.
+
+      :param rec: A record containing data.
+      :type rec: Record
+
+      :returns: A list of namedtuples containing the upper, middle, and lower bands.
+      :rtype: BBANDS_Return
+
+
+

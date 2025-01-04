@@ -1,0 +1,40 @@
+indicative
+==========
+
+.. py:module:: indicative
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/indicative/adapters/index
+   /autoapi/indicative/collection/index
+   /autoapi/indicative/constants/index
+   /autoapi/indicative/datas/index
+   /autoapi/indicative/enums/index
+   /autoapi/indicative/history/index
+   /autoapi/indicative/indicators/index
+   /autoapi/indicative/mixins/index
+   /autoapi/indicative/protocols/index
+   /autoapi/indicative/resampler/index
+   /autoapi/indicative/types/index
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   indicative.__version__
+
+
+Package Contents
+----------------
+
+.. py:data:: __version__
+   :value: '0.0.1'
+
+

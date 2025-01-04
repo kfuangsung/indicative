@@ -1,0 +1,19 @@
+indicative.constants
+====================
+
+.. py:module:: indicative.constants
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   indicative.constants.DEFAULT_DATAFRAME_COLUMN_NAME_MAPPING
+
+
+Module Contents
+---------------
+
+.. py:data:: DEFAULT_DATAFRAME_COLUMN_NAME_MAPPING
+

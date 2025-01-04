@@ -1,0 +1,6 @@
+<map id="inheritance614f790ea2" name="inheritance614f790ea2">
+<area shape="rect" id="node1" href="bbands/index.html#indicative.indicators.bbands.BBANDS" target="_top" title="Bollinger Bands (BBANDS) indicator." alt="" coords="428,31,505,56"/>
+<area shape="rect" id="node2" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" target="_top" title="Protocol for indicators." alt="" coords="248,5,380,31"/>
+<area shape="rect" id="node3" href="../mixins/index.html#indicative.mixins.IndicatorMixin" target="_top" title="A mixin class for indicators." alt="" coords="257,55,371,80"/>
+<area shape="rect" id="node5" title="Base class for protocol classes." alt="" coords="125,5,200,31"/>
+</map>

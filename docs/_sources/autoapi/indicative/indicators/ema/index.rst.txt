@@ -1,0 +1,94 @@
+indicative.indicators.ema
+=========================
+
+.. py:module:: indicative.indicators.ema
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   indicative.indicators.ema.EMA_Return
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.indicators.ema.ema
+   indicative.indicators.ema.EMA
+
+
+Module Contents
+---------------
+
+.. py:class:: ema
+
+   Bases: :py:obj:`tuple`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.ema.ema
+      :parts: 1
+      :private-bases:
+
+
+   .. py:attribute:: ema
+
+
+.. py:data:: EMA_Return
+   :type:  TypeAlias
+   :value: list[EMA_Output]
+
+
+.. py:class:: EMA
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.ema.EMA
+      :parts: 1
+      :private-bases:
+
+
+   Exponential Moving Average (EMA).
+
+   The Exponential Moving Average (EMA) is a type of moving average that gives more
+   weight to more recent prices. It is calculated by taking the average price of a
+   security over a specified period of time, with more recent prices given more
+   weight.
+
+   :param timeperiod: The number of bars to use in the calculation of the EMA.
+                      Defaults to 30.
+   :type timeperiod: int
+
+
+   .. py:attribute:: timeperiod
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: compute(close)
+
+      Compute the EMA.
+
+      :param close: The array of closing prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the computed EMA values.
+      :rtype: EMA_Return
+
+
+
+   .. py:method:: _(rec)
+
+      Compute the EMA using a Record object.
+
+      :param rec: A Record object containing the data.
+      :type rec: Record
+
+      :returns: A list of namedtuples containing the computed EMA values.
+      :rtype: EMA_Return
+
+
+

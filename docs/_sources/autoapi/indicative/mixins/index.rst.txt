@@ -1,0 +1,111 @@
+indicative.mixins
+=================
+
+.. py:module:: indicative.mixins
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.mixins.IndicatorMixin
+   indicative.mixins.AdapterMixin
+   indicative.mixins.SelectMixin
+
+
+Module Contents
+---------------
+
+.. py:class:: IndicatorMixin
+
+   A mixin class for indicators.
+
+   It provides a `__call__` method that calls the `compute` method of the
+   indicator and a `__ror__` method that calls the indicator with the given
+   arguments.
+
+   .. attribute:: compute
+
+      A method that computes the indicator.
+
+
+   .. py:method:: __call__(*args, **kwargs)
+
+      Calls the `compute` method of the indicator.
+
+      :param \*args: The positional arguments to pass to the `compute` method.
+      :param \*\*kwargs: The keyword arguments to pass to the `compute` method.
+
+      :returns: The result of calling the `compute` method.
+
+
+
+   .. py:method:: __ror__(other)
+
+      Calls the indicator with the given arguments.
+
+      :param other: The arguments to pass to the indicator.
+
+      :returns: The result of calling the indicator with the given arguments.
+
+
+
+.. py:class:: AdapterMixin
+
+   A mixin class that provides a `__call__` method to call a stored function.
+
+   The `__call__` method calls the stored function with the provided arguments.
+
+   .. attribute:: func
+
+      The stored function.
+
+
+   .. py:method:: __call__(*args, **kwargs)
+
+      Call the stored function with the provided arguments.
+
+      :param \*args: Positional arguments to pass to the function.
+      :param \*\*kwargs: Keyword arguments to pass to the function.
+
+      :returns: The result of calling the function.
+      :rtype: Any
+
+
+
+.. py:class:: SelectMixin
+
+   A mixin that provides a `__call__` method to call a stored selection function.
+
+   The `__call__` method calls the stored selection function with the provided
+   arguments.
+
+   .. attribute:: select
+
+      The stored selection function.
+
+
+   .. py:method:: __call__(*args, **kwargs)
+
+      Call the stored selection function with the provided arguments.
+
+      :param \*args: Positional arguments to pass to the function.
+      :param \*\*kwargs: Keyword arguments to pass to the function.
+
+      :returns: The result of calling the function.
+      :rtype: Any
+
+
+
+   .. py:method:: __ror__(other)
+
+      Call the stored selection function with the given iterable.
+
+      :param other: The iterable to pass to the function.
+
+      :returns: The result of calling the function.
+      :rtype: Any
+
+
+

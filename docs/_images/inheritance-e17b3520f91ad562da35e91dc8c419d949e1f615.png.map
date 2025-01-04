@@ -1,0 +1,4 @@
+<map id="inheritance9fb9e36f74" name="inheritance9fb9e36f74">
+<area shape="rect" id="node1" href="#indicative.adapters.Head" target="_top" title="Selects the first `n` elements from a sequence." alt="" coords="152,5,224,31"/>
+<area shape="rect" id="node2" href="../mixins/index.html#indicative.mixins.SelectMixin" target="_top" title="A mixin that provides a `__call__` method to call a stored selection function." alt="" coords="5,5,104,31"/>
+</map>

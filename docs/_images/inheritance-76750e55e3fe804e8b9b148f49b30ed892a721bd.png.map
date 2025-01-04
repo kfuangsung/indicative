@@ -1,0 +1,4 @@
+<map id="inheritance406734eace" name="inheritance406734eace">
+<area shape="rect" id="node1" href="../mixins/index.html#indicative.mixins.SelectMixin" target="_top" title="A mixin that provides a `__call__` method to call a stored selection function." alt="" coords="5,5,104,31"/>
+<area shape="rect" id="node2" href="#indicative.adapters.Tail" target="_top" title="Selects the last `n` elements from a sequence." alt="" coords="152,5,224,31"/>
+</map>

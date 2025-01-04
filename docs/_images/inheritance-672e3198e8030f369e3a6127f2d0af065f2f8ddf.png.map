@@ -1,0 +1,4 @@
+<map id="inheritance5452c75d9d" name="inheritance5452c75d9d">
+<area shape="rect" id="node1" href="#indicative.adapters.Mean" target="_top" title="Computes the mean of a sequence of numbers." alt="" coords="152,5,224,31"/>
+<area shape="rect" id="node2" href="../mixins/index.html#indicative.mixins.SelectMixin" target="_top" title="A mixin that provides a `__call__` method to call a stored selection function." alt="" coords="5,5,104,31"/>
+</map>

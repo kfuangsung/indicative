@@ -1,0 +1,95 @@
+indicative.indicators.rsi
+=========================
+
+.. py:module:: indicative.indicators.rsi
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   indicative.indicators.rsi.RSI_Return
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.indicators.rsi.rsi
+   indicative.indicators.rsi.RSI
+
+
+Module Contents
+---------------
+
+.. py:class:: rsi
+
+   Bases: :py:obj:`tuple`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.rsi.rsi
+      :parts: 1
+      :private-bases:
+
+
+   .. py:attribute:: rsi
+
+
+.. py:data:: RSI_Return
+   :type:  TypeAlias
+   :value: list[RSI_Output]
+
+
+.. py:class:: RSI
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.rsi.RSI
+      :parts: 1
+      :private-bases:
+
+
+   Computes the Relative Strength Index (RSI) for a given set of price data.
+
+   The Relative Strength Index (RSI) is a technical indicator used to measure the
+   strength of a trend. It is based on the ratio of the average gain of up days to the
+   average loss of down days over a given period of time.
+
+   .. attribute:: timeperiod
+
+      The number of periods to use for the calculation of the RSI.
+
+      :type: int
+
+
+   .. py:attribute:: timeperiod
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: compute(close)
+
+      Computes the Relative Strength Index (RSI) for a given set of close prices.
+
+      :param close: An array of close prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the computed RSI values.
+      :rtype: RSI_Return
+
+
+
+   .. py:method:: _(rec)
+
+      Computes the Relative Strength Index (RSI) using a Record object.
+
+      :param rec: A Record object containing close prices.
+      :type rec: Record
+
+      :returns: A list of namedtuples containing the computed RSI values.
+      :rtype: RSI_Return
+
+
+

@@ -1,0 +1,313 @@
+indicative.history
+==================
+
+.. py:module:: indicative.history
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   indicative.history.T
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.history.Record
+   indicative.history.History
+
+
+Module Contents
+---------------
+
+.. py:data:: T
+
+.. py:class:: Record
+
+   A record is an immutable data structure that stores a sequence of values.
+
+   .. attribute:: name
+
+      The name of the record.
+
+      :type: str
+
+   .. attribute:: data
+
+      The sequence of values stored in the record.
+
+      :type: deque[T]
+
+   .. attribute:: size
+
+      The maximum number of values to store in the record.
+
+      :type: PositiveInt | None
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: data
+      :type:  collections.deque[Record.T]
+      :value: None
+
+
+
+   .. py:attribute:: size
+      :type:  pydantic.PositiveInt | None
+      :value: None
+
+
+
+   .. py:method:: __call__(item)
+
+      Append a value or a sequence of values to the record.
+
+      :param item: The value or sequence of values to append.
+      :type item: T | Iterable[T]
+
+
+
+   .. py:method:: __getitem__(key)
+
+      Get a value from the record by index.
+
+      :param key: The index of the value to retrieve.
+      :type key: int
+
+      :returns:
+
+                The value at the specified index, or a list of values
+                    if the index is a slice.
+      :rtype: T | list[T]
+
+
+
+   .. py:method:: __len__()
+
+      Get the number of values in the record.
+
+      :returns: The number of values in the record.
+      :rtype: int
+
+
+
+   .. py:method:: at(index)
+
+      Get a value from the record by index.
+
+      :param index: The index of the value to retrieve.
+      :type index: int
+
+      :returns: The value at the specified index.
+      :rtype: T
+
+
+
+   .. py:method:: front()
+
+      Get the first value from the record.
+
+      :returns: The first value in the record.
+      :rtype: T
+
+
+
+   .. py:method:: back()
+
+      Get the last value from the record.
+
+      :returns: The last value in the record.
+      :rtype: T
+
+
+
+   .. py:method:: reset()
+
+      Reset the record to an empty sequence.
+
+      :returns: None
+
+
+
+   .. py:method:: append(item)
+
+      Append a value to the record.
+
+      :param item: The value to append.
+      :type item: T
+
+
+
+   .. py:method:: _(items)
+
+      Append a sequence of values to the record.
+
+      :param items: The sequence of values to append.
+      :type items: Iterable[T]
+
+
+
+   .. py:method:: get_oldest()
+
+      Get the oldest value from the record.
+
+      :returns: The oldest value in the record.
+      :rtype: T
+
+
+
+   .. py:method:: get_latest()
+
+      Get the latest value from the record.
+
+      :returns: The latest value in the record.
+      :rtype: T
+
+
+
+   .. py:method:: pop_oldest()
+
+      Pop the oldest value from the record.
+
+      :returns: The oldest value in the record.
+      :rtype: T
+
+
+
+   .. py:method:: pop_latest()
+
+      Pop the latest value from the record.
+
+      :returns: The latest value in the record.
+      :rtype: T
+
+
+
+   .. py:method:: adjust_size()
+
+      Adjust the size of the record by removing the oldest values until the
+      record is at or below the maximum size.
+
+      :returns: None
+
+
+
+   .. py:attribute:: get
+
+
+   .. py:attribute:: pop
+
+
+.. py:class:: History
+
+   A general purposed history -> store anything.
+
+   Allows to register data into the history with a given name, and access
+   the data by name.
+
+   .. attribute:: default_size
+
+      The default size of the record.
+
+
+   .. py:attribute:: default_size
+      :type:  pydantic.PositiveInt | None
+      :value: None
+
+
+
+   .. py:property:: records
+      :type: list[Record[T]]
+
+
+      Gets the records from the history.
+
+      :returns: The records in the history.
+      :rtype: list[Record[T]]
+
+
+   .. py:property:: fields
+      :type: list[str]
+
+
+      Gets the field names from the history.
+
+      :returns: The field names in the history.
+      :rtype: list[str]
+
+
+   .. py:method:: __getitem__(name)
+
+      Accesses a record by its name.
+
+      :param name: The name of the record.
+      :type name: str
+
+      :returns: The record associated with the given name.
+      :rtype: Record[T]
+
+
+
+   .. py:method:: __or__(other)
+
+      Allows using the `|` operator for applying a callable to the history.
+
+      :param other: The callable to be applied.
+      :type other: Callable
+
+      :returns: The result of applying the callable to the history.
+      :rtype: Any
+
+
+
+   .. py:method:: __ror__(other, *args, **kwargs)
+
+      Allows using the `|` operator to register data into the history.
+
+      :param other: The data to be registered.
+      :type other: Any
+      :param \*args: Additional positional arguments.
+      :param \*\*kwargs: Additional keyword arguments.
+
+      :returns: The updated history.
+      :rtype: Self
+
+
+
+   .. py:method:: register(name, data = [], size = None, replace = False)
+
+      Registers data into the history with a given name.
+
+      :param name: The name of the record.
+      :type name: str
+      :param data: The data to be registered. Defaults to [].
+      :type data: Iterable[Any], optional
+      :param size: The size of the record. Defaults to None.
+      :type size: int | None, optional
+      :param replace: Whether to replace existing data. Defaults to False.
+      :type replace: bool, optional
+
+
+
+   .. py:method:: _(name, data, size = None, replace = False)
+
+      Registers data into the history with a given name.
+
+      :param name: The name of the record.
+      :type name: str
+      :param data: The data to be registered.
+      :type data: Any
+      :param size: The size of the record. Defaults to None.
+      :type size: int | None, optional
+      :param replace: Whether to replace existing data. Defaults to False.
+      :type replace: bool, optional
+
+
+

@@ -1,0 +1,92 @@
+indicative.indicators.sma
+=========================
+
+.. py:module:: indicative.indicators.sma
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   indicative.indicators.sma.SMA_Return
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.indicators.sma.sma
+   indicative.indicators.sma.SMA
+
+
+Module Contents
+---------------
+
+.. py:class:: sma
+
+   Bases: :py:obj:`tuple`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.sma.sma
+      :parts: 1
+      :private-bases:
+
+
+   .. py:attribute:: sma
+
+
+.. py:data:: SMA_Return
+   :type:  TypeAlias
+   :value: list[SMA_Output]
+
+
+.. py:class:: SMA
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.sma.SMA
+      :parts: 1
+      :private-bases:
+
+
+   Simple Moving Average (SMA) indicator.
+
+   .. attribute:: timeperiod
+
+      The number of periods for the moving average.
+      Defaults to 30.
+
+      :type: PositiveInt
+
+
+   .. py:attribute:: timeperiod
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: compute(close)
+
+      Computes the SMA indicator for a given array of closing prices.
+
+      :param close: An array of closing prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the computed SMA values.
+      :rtype: SMA_Return
+
+
+
+   .. py:method:: _(rec)
+
+      Computes the SMA indicator for a given record.
+
+      :param rec: A record containing data.
+      :type rec: Record
+
+      :returns: A list of namedtuples containing the computed SMA values.
+      :rtype: SMA_Return
+
+
+

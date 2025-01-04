@@ -1,0 +1,53 @@
+indicative.collection
+=====================
+
+.. py:module:: indicative.collection
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.collection.Collection
+
+
+Module Contents
+---------------
+
+.. py:class:: Collection
+
+   A collection of functions that can be called in parallel.
+
+   .. attribute:: fns
+
+      A tuple of callables.
+
+   :returns: A list of results from calling each function in `fns` with the same arguments.
+
+
+   .. py:attribute:: fns
+      :type:  tuple[collections.abc.Callable[[Any], Any], Ellipsis]
+
+
+   .. py:method:: __call__(*args, **kwargs)
+
+      Calls each function in `fns` with the same arguments.
+
+      :param \*args: The positional arguments to pass to each function.
+      :param \*\*kwargs: The keyword arguments to pass to each function.
+
+      :returns: A list of results from calling each function in `fns`.
+
+
+
+   .. py:method:: __ror__(other)
+
+      Allows using the `|` operator for calling the functions in `fns`.
+
+      :param other: The argument to pass to each function.
+
+      :returns: The result of calling each function in `fns` with `other`.
+
+
+

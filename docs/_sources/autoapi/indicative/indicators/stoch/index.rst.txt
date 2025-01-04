@@ -1,0 +1,155 @@
+indicative.indicators.stoch
+===========================
+
+.. py:module:: indicative.indicators.stoch
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   indicative.indicators.stoch.STOCH_Return
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.indicators.stoch.stoch
+   indicative.indicators.stoch.STOCH
+
+
+Module Contents
+---------------
+
+.. py:class:: stoch
+
+   Bases: :py:obj:`tuple`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.stoch.stoch
+      :parts: 1
+      :private-bases:
+
+
+   .. py:attribute:: stoch_k
+
+
+   .. py:attribute:: stoch_d
+
+
+.. py:data:: STOCH_Return
+   :type:  TypeAlias
+   :value: list[STOCH_Output]
+
+
+.. py:class:: STOCH
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.stoch.STOCH
+      :parts: 1
+      :private-bases:
+
+
+   Stochastic Oscillator (STOCH)
+
+   The Stochastic Oscillator is a momentum indicator that compares the
+   closing price of a security to its price range over a given period of time.
+   The indicator is used to identify overbought and oversold conditions in the
+   market.
+
+   .. attribute:: fastk_period
+
+      The number of periods used for the fast k line.
+
+      :type: int
+
+   .. attribute:: slowk_period
+
+      The number of periods used for the slow k line.
+
+      :type: int
+
+   .. attribute:: slowd_period
+
+      The number of periods used for the slow d line.
+
+      :type: int
+
+   .. attribute:: slowk_matype
+
+      The type of moving average used for the slow k line.
+
+      :type: MA_Type
+
+   .. attribute:: slowd_matype
+
+      The type of moving average used for the slow d line.
+
+      :type: MA_Type
+
+
+   .. py:attribute:: fastk_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: slowk_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: slowd_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: slowk_matype
+      :type:  indicative.enums.MA_Type
+      :value: None
+
+
+
+   .. py:attribute:: slowd_matype
+      :type:  indicative.enums.MA_Type
+      :value: None
+
+
+
+   .. py:method:: compute(high, low, close)
+
+      Compute the Stochastic Oscillator.
+
+      :param high: An array of high prices.
+      :type high: Array
+      :param low: An array of low prices.
+      :type low: Array
+      :param close: An array of close prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the computed STOCH values.
+      :rtype: STOCH_Return
+
+
+
+   .. py:method:: _(high, low, close)
+
+      Compute the Stochastic Oscillator using Records.
+
+      :param high: A Record containing high prices.
+      :type high: Record
+      :param low: A Record containing low prices.
+      :type low: Record
+      :param close: A Record containing close prices.
+      :type close: Record
+
+      :returns: A list of namedtuples containing the computed STOCH values.
+      :rtype: STOCH_Return
+
+
+

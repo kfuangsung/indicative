@@ -1,0 +1,1202 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>indicative.indicators &#8212; Indicative</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/indicative/indicators/index';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="indicative.indicators.adx" href="adx/index.html" />
+    <link rel="prev" title="indicative.history" href="../history/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Indicative</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/kfuangsung/indicative" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/kfuangsung/indicative" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">indicative</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../adapters/index.html">indicative.adapters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collection/index.html">indicative.collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../constants/index.html">indicative.constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datas/index.html">indicative.datas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../enums/index.html">indicative.enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../history/index.html">indicative.history</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">indicative.indicators</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="adx/index.html">indicative.indicators.adx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bbands/index.html">indicative.indicators.bbands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ema/index.html">indicative.indicators.ema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macd/index.html">indicative.indicators.macd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rsi/index.html">indicative.indicators.rsi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sma/index.html">indicative.indicators.sma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stoch/index.html">indicative.indicators.stoch</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../mixins/index.html">indicative.mixins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocols/index.html">indicative.protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resampler/index.html">indicative.resampler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../types/index.html">indicative.types</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">indicative</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">indicative.indicators</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-indicative.indicators">
+<span id="indicative-indicators"></span><h1>indicative.indicators<a class="headerlink" href="#module-indicative.indicators" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adx/index.html">indicative.indicators.adx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bbands/index.html">indicative.indicators.bbands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ema/index.html">indicative.indicators.ema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="macd/index.html">indicative.indicators.macd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsi/index.html">indicative.indicators.rsi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sma/index.html">indicative.indicators.sma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stoch/index.html">indicative.indicators.stoch</a></li>
+</ul>
+</div>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#indicative.indicators.ADX" title="indicative.indicators.ADX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ADX</span></code></a></p></td>
+<td><p>Computes the Average Directional Index (ADX).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#indicative.indicators.BBANDS" title="indicative.indicators.BBANDS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BBANDS</span></code></a></p></td>
+<td><p>Bollinger Bands (BBANDS) indicator.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#indicative.indicators.EMA" title="indicative.indicators.EMA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EMA</span></code></a></p></td>
+<td><p>Exponential Moving Average (EMA).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#indicative.indicators.MACD" title="indicative.indicators.MACD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MACD</span></code></a></p></td>
+<td><p>Moving Average Convergence Divergence (MACD).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#indicative.indicators.RSI" title="indicative.indicators.RSI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RSI</span></code></a></p></td>
+<td><p>Computes the Relative Strength Index (RSI) for a given set of price data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#indicative.indicators.SMA" title="indicative.indicators.SMA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SMA</span></code></a></p></td>
+<td><p>Simple Moving Average (SMA) indicator.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#indicative.indicators.STOCH" title="indicative.indicators.STOCH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STOCH</span></code></a></p></td>
+<td><p>Stochastic Oscillator (STOCH)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="package-contents">
+<h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="indicative.indicators.ADX">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">indicative.indicators.</span></span><span class="sig-name descname"><span class="pre">ADX</span></span><a class="reference internal" href="../../../_modules/indicative/indicators/adx.html#ADX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.ADX" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" title="indicative.protocols.IndicatorProtocol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.protocols.IndicatorProtocol</span></code></a>, <a class="reference internal" href="../mixins/index.html#indicative.mixins.IndicatorMixin" title="indicative.mixins.IndicatorMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.mixins.IndicatorMixin</span></code></a></p>
+<div class="graphviz"><img src="../../../_images/inheritance-f9fc796754c98ea30322a8a7a3f902124f4ec681.png" alt="Inheritance diagram of indicative.indicators.ADX" usemap="#inheritancef4cabd4487" class="inheritance graphviz" /></div>
+<map id="inheritancef4cabd4487" name="inheritancef4cabd4487">
+<area shape="rect" id="node1" href="adx/index.html#indicative.indicators.adx.ADX" target="_top" title="Computes the Average Directional Index (ADX)." alt="" coords="428,31,500,56"/>
+<area shape="rect" id="node2" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" target="_top" title="Protocol for indicators." alt="" coords="248,5,380,31"/>
+<area shape="rect" id="node3" href="../mixins/index.html#indicative.mixins.IndicatorMixin" target="_top" title="A mixin class for indicators." alt="" coords="257,55,371,80"/>
+</map><p>Computes the Average Directional Index (ADX).</p>
+<p>The Average Directional Index (ADX) is a technical indicator that measures the
+strength of a trend. It is based on the difference between the highest and lowest
+prices over a given period of time. The ADX is calculated as the absolute value of
+the difference between the highest and lowest prices divided by the sum of the
+absolute values of the differences between consecutive prices.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.ADX.timeperiod">
+<span class="sig-name descname"><span class="pre">timeperiod</span></span><a class="headerlink" href="#indicative.indicators.ADX.timeperiod" title="Link to this definition">#</a></dt>
+<dd><p>The number of periods to use for the calculation of the ADX.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">timeperiod</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.ADX.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">close</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/adx.html#ADX.compute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.ADX.compute" title="Link to this definition">#</a></dt>
+<dd><p>Computes the Average Directional Index (ADX) for a given set of high, low,
+and close price data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>high</strong> (<em>Array</em>) – An array of high prices.</p></li>
+<li><p><strong>low</strong> (<em>Array</em>) – An array of low prices.</p></li>
+<li><p><strong>close</strong> (<em>Array</em>) – An array of close prices.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the computed ADX values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>STOCH_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.ADX._">
+<span class="sig-name descname"><span class="pre">_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">close</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/adx.html#ADX._"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.ADX._" title="Link to this definition">#</a></dt>
+<dd><p>Computes the Average Directional Index (ADX) using high, low, and close
+price data records.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>high</strong> (<a class="reference internal" href="../history/index.html#indicative.history.Record" title="indicative.history.Record"><em>Record</em></a>) – A record containing high prices.</p></li>
+<li><p><strong>low</strong> (<a class="reference internal" href="../history/index.html#indicative.history.Record" title="indicative.history.Record"><em>Record</em></a>) – A record containing low prices.</p></li>
+<li><p><strong>close</strong> (<a class="reference internal" href="../history/index.html#indicative.history.Record" title="indicative.history.Record"><em>Record</em></a>) – A record containing close prices.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the computed ADX values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>STOCH_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="indicative.indicators.BBANDS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">indicative.indicators.</span></span><span class="sig-name descname"><span class="pre">BBANDS</span></span><a class="reference internal" href="../../../_modules/indicative/indicators/bbands.html#BBANDS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.BBANDS" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" title="indicative.protocols.IndicatorProtocol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.protocols.IndicatorProtocol</span></code></a>, <a class="reference internal" href="../mixins/index.html#indicative.mixins.IndicatorMixin" title="indicative.mixins.IndicatorMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.mixins.IndicatorMixin</span></code></a></p>
+<div class="graphviz"><img src="../../../_images/inheritance-4559625d6ed4985d679c2c183dc56a9453e98082.png" alt="Inheritance diagram of indicative.indicators.BBANDS" usemap="#inheritance614f790ea2" class="inheritance graphviz" /></div>
+<map id="inheritance614f790ea2" name="inheritance614f790ea2">
+<area shape="rect" id="node1" href="bbands/index.html#indicative.indicators.bbands.BBANDS" target="_top" title="Bollinger Bands (BBANDS) indicator." alt="" coords="428,31,505,56"/>
+<area shape="rect" id="node2" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" target="_top" title="Protocol for indicators." alt="" coords="248,5,380,31"/>
+<area shape="rect" id="node3" href="../mixins/index.html#indicative.mixins.IndicatorMixin" target="_top" title="A mixin class for indicators." alt="" coords="257,55,371,80"/>
+</map><p>Bollinger Bands (BBANDS) indicator.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.BBANDS.timeperiod">
+<span class="sig-name descname"><span class="pre">timeperiod</span></span><a class="headerlink" href="#indicative.indicators.BBANDS.timeperiod" title="Link to this definition">#</a></dt>
+<dd><p>The number of periods for the moving average.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PositiveInt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.BBANDS.nbdevup">
+<span class="sig-name descname"><span class="pre">nbdevup</span></span><a class="headerlink" href="#indicative.indicators.BBANDS.nbdevup" title="Link to this definition">#</a></dt>
+<dd><p>The number of standard deviations above the moving average.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PositiveInt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.BBANDS.nbdevdn">
+<span class="sig-name descname"><span class="pre">nbdevdn</span></span><a class="headerlink" href="#indicative.indicators.BBANDS.nbdevdn" title="Link to this definition">#</a></dt>
+<dd><p>The number of standard deviations below the moving average.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PositiveInt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.BBANDS.matype">
+<span class="sig-name descname"><span class="pre">matype</span></span><a class="headerlink" href="#indicative.indicators.BBANDS.matype" title="Link to this definition">#</a></dt>
+<dd><p>The type of moving average to use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../enums/index.html#indicative.enums.MA_Type" title="indicative.enums.MA_Type">MA_Type</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">timeperiod</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">nbdevup</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">nbdevdn</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id3" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">matype</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../enums/index.html#indicative.enums.MA_Type" title="indicative.enums.MA_Type"><span class="pre">indicative.enums.MA_Type</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id4" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.BBANDS.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">close</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/bbands.html#BBANDS.compute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.BBANDS.compute" title="Link to this definition">#</a></dt>
+<dd><p>Computes the Bollinger Bands for a given array of closing prices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>close</strong> (<em>Array</em>) – An array of closing prices.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the upper, middle, and lower bands.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>BBANDS_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.BBANDS._">
+<span class="sig-name descname"><span class="pre">_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/bbands.html#BBANDS._"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.BBANDS._" title="Link to this definition">#</a></dt>
+<dd><p>Computes the Bollinger Bands for a given record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rec</strong> (<a class="reference internal" href="../history/index.html#indicative.history.Record" title="indicative.history.Record"><em>Record</em></a>) – A record containing data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the upper, middle, and lower bands.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>BBANDS_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="indicative.indicators.EMA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">indicative.indicators.</span></span><span class="sig-name descname"><span class="pre">EMA</span></span><a class="reference internal" href="../../../_modules/indicative/indicators/ema.html#EMA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.EMA" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" title="indicative.protocols.IndicatorProtocol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.protocols.IndicatorProtocol</span></code></a>, <a class="reference internal" href="../mixins/index.html#indicative.mixins.IndicatorMixin" title="indicative.mixins.IndicatorMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.mixins.IndicatorMixin</span></code></a></p>
+<div class="graphviz"><img src="../../../_images/inheritance-88ddef76cfc6ccc2ce0113df8b669924cd051629.png" alt="Inheritance diagram of indicative.indicators.EMA" usemap="#inheritancedf8017fbe2" class="inheritance graphviz" /></div>
+<map id="inheritancedf8017fbe2" name="inheritancedf8017fbe2">
+<area shape="rect" id="node1" href="ema/index.html#indicative.indicators.ema.EMA" target="_top" title="Exponential Moving Average (EMA)." alt="" coords="428,31,500,56"/>
+<area shape="rect" id="node2" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" target="_top" title="Protocol for indicators." alt="" coords="248,5,380,31"/>
+<area shape="rect" id="node3" href="../mixins/index.html#indicative.mixins.IndicatorMixin" target="_top" title="A mixin class for indicators." alt="" coords="257,55,371,80"/>
+</map><p>Exponential Moving Average (EMA).</p>
+<p>The Exponential Moving Average (EMA) is a type of moving average that gives more
+weight to more recent prices. It is calculated by taking the average price of a
+security over a specified period of time, with more recent prices given more
+weight.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>timeperiod</strong> (<em>int</em>) – The number of bars to use in the calculation of the EMA.
+Defaults to 30.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.EMA.timeperiod">
+<span class="sig-name descname"><span class="pre">timeperiod</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#indicative.indicators.EMA.timeperiod" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.EMA.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">close</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/ema.html#EMA.compute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.EMA.compute" title="Link to this definition">#</a></dt>
+<dd><p>Compute the EMA.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>close</strong> (<em>Array</em>) – The array of closing prices.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the computed EMA values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>EMA_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.EMA._">
+<span class="sig-name descname"><span class="pre">_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/ema.html#EMA._"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.EMA._" title="Link to this definition">#</a></dt>
+<dd><p>Compute the EMA using a Record object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rec</strong> (<a class="reference internal" href="../history/index.html#indicative.history.Record" title="indicative.history.Record"><em>Record</em></a>) – A Record object containing the data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the computed EMA values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>EMA_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="indicative.indicators.MACD">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">indicative.indicators.</span></span><span class="sig-name descname"><span class="pre">MACD</span></span><a class="reference internal" href="../../../_modules/indicative/indicators/macd.html#MACD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.MACD" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" title="indicative.protocols.IndicatorProtocol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.protocols.IndicatorProtocol</span></code></a>, <a class="reference internal" href="../mixins/index.html#indicative.mixins.IndicatorMixin" title="indicative.mixins.IndicatorMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.mixins.IndicatorMixin</span></code></a></p>
+<div class="graphviz"><img src="../../../_images/inheritance-528e8366552c3cd785126a561f9093b292d48993.png" alt="Inheritance diagram of indicative.indicators.MACD" usemap="#inheritancee32af5a5f3" class="inheritance graphviz" /></div>
+<map id="inheritancee32af5a5f3" name="inheritancee32af5a5f3">
+<area shape="rect" id="node2" href="../mixins/index.html#indicative.mixins.IndicatorMixin" target="_top" title="A mixin class for indicators." alt="" coords="257,55,371,80"/>
+<area shape="rect" id="node5" href="macd/index.html#indicative.indicators.macd.MACD" target="_top" title="Moving Average Convergence Divergence (MACD)." alt="" coords="428,31,500,56"/>
+<area shape="rect" id="node3" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" target="_top" title="Protocol for indicators." alt="" coords="248,5,380,31"/>
+</map><p>Moving Average Convergence Divergence (MACD).</p>
+<p>The MACD is a widely used indicator that plots the difference between a
+short-term and long-term moving average of a security’s price. The MACD is
+calculated by subtracting the long-term moving average from the short-term
+moving average.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fast_period</strong> (<em>PositiveInt</em>) – The number of bars used to calculate the
+fast moving average. Defaults to 12.</p></li>
+<li><p><strong>slow_period</strong> (<em>PositiveInt</em>) – The number of bars used to calculate the
+slow moving average. Defaults to 26.</p></li>
+<li><p><strong>signal_period</strong> (<em>PositiveInt</em>) – The number of bars used to calculate the
+signal line. Defaults to 9.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list of namedtuples containing the MACD, MACD signal and</dt><dd><p>MACD histogram values.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>MACD_Return</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.MACD.fast_period">
+<span class="sig-name descname"><span class="pre">fast_period</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#indicative.indicators.MACD.fast_period" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.MACD.slow_period">
+<span class="sig-name descname"><span class="pre">slow_period</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#indicative.indicators.MACD.slow_period" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.MACD.signal_period">
+<span class="sig-name descname"><span class="pre">signal_period</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#indicative.indicators.MACD.signal_period" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.MACD.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">close</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/macd.html#MACD.compute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.MACD.compute" title="Link to this definition">#</a></dt>
+<dd><p>Compute the MACD.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>close</strong> (<em>Array</em>) – A numpy array of close prices.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list of namedtuples containing the MACD, MACD signal</dt><dd><p>and MACD histogram values.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>MACD_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.MACD._">
+<span class="sig-name descname"><span class="pre">_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/macd.html#MACD._"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.MACD._" title="Link to this definition">#</a></dt>
+<dd><p>Compute the MACD.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rec</strong> (<a class="reference internal" href="../history/index.html#indicative.history.Record" title="indicative.history.Record"><em>Record</em></a>) – A Record object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list of namedtuples containing the MACD, MACD signal</dt><dd><p>and MACD histogram values.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>MACD_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="indicative.indicators.RSI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">indicative.indicators.</span></span><span class="sig-name descname"><span class="pre">RSI</span></span><a class="reference internal" href="../../../_modules/indicative/indicators/rsi.html#RSI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.RSI" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" title="indicative.protocols.IndicatorProtocol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.protocols.IndicatorProtocol</span></code></a>, <a class="reference internal" href="../mixins/index.html#indicative.mixins.IndicatorMixin" title="indicative.mixins.IndicatorMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.mixins.IndicatorMixin</span></code></a></p>
+<div class="graphviz"><img src="../../../_images/inheritance-3726cea66e925c5e93d12cc2f45d9cc885c81098.png" alt="Inheritance diagram of indicative.indicators.RSI" usemap="#inheritanceeef4a40503" class="inheritance graphviz" /></div>
+<map id="inheritanceeef4a40503" name="inheritanceeef4a40503">
+<area shape="rect" id="node2" href="../mixins/index.html#indicative.mixins.IndicatorMixin" target="_top" title="A mixin class for indicators." alt="" coords="257,55,371,80"/>
+<area shape="rect" id="node5" href="rsi/index.html#indicative.indicators.rsi.RSI" target="_top" title="Computes the Relative Strength Index (RSI) for a given set of price data." alt="" coords="428,31,500,56"/>
+<area shape="rect" id="node3" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" target="_top" title="Protocol for indicators." alt="" coords="248,5,380,31"/>
+</map><p>Computes the Relative Strength Index (RSI) for a given set of price data.</p>
+<p>The Relative Strength Index (RSI) is a technical indicator used to measure the
+strength of a trend. It is based on the ratio of the average gain of up days to the
+average loss of down days over a given period of time.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.RSI.timeperiod">
+<span class="sig-name descname"><span class="pre">timeperiod</span></span><a class="headerlink" href="#indicative.indicators.RSI.timeperiod" title="Link to this definition">#</a></dt>
+<dd><p>The number of periods to use for the calculation of the RSI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">timeperiod</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id5" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.RSI.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">close</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/rsi.html#RSI.compute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.RSI.compute" title="Link to this definition">#</a></dt>
+<dd><p>Computes the Relative Strength Index (RSI) for a given set of close prices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>close</strong> (<em>Array</em>) – An array of close prices.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the computed RSI values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>RSI_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.RSI._">
+<span class="sig-name descname"><span class="pre">_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/rsi.html#RSI._"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.RSI._" title="Link to this definition">#</a></dt>
+<dd><p>Computes the Relative Strength Index (RSI) using a Record object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rec</strong> (<a class="reference internal" href="../history/index.html#indicative.history.Record" title="indicative.history.Record"><em>Record</em></a>) – A Record object containing close prices.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the computed RSI values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>RSI_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="indicative.indicators.SMA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">indicative.indicators.</span></span><span class="sig-name descname"><span class="pre">SMA</span></span><a class="reference internal" href="../../../_modules/indicative/indicators/sma.html#SMA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.SMA" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" title="indicative.protocols.IndicatorProtocol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.protocols.IndicatorProtocol</span></code></a>, <a class="reference internal" href="../mixins/index.html#indicative.mixins.IndicatorMixin" title="indicative.mixins.IndicatorMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.mixins.IndicatorMixin</span></code></a></p>
+<div class="graphviz"><img src="../../../_images/inheritance-5740e7061f541bbac0003f9fe2b37339949bd664.png" alt="Inheritance diagram of indicative.indicators.SMA" usemap="#inheritanceae88baf2fc" class="inheritance graphviz" /></div>
+<map id="inheritanceae88baf2fc" name="inheritanceae88baf2fc">
+<area shape="rect" id="node2" href="../mixins/index.html#indicative.mixins.IndicatorMixin" target="_top" title="A mixin class for indicators." alt="" coords="257,55,371,80"/>
+<area shape="rect" id="node5" href="sma/index.html#indicative.indicators.sma.SMA" target="_top" title="Simple Moving Average (SMA) indicator." alt="" coords="428,31,500,56"/>
+<area shape="rect" id="node3" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" target="_top" title="Protocol for indicators." alt="" coords="248,5,380,31"/>
+</map><p>Simple Moving Average (SMA) indicator.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.SMA.timeperiod">
+<span class="sig-name descname"><span class="pre">timeperiod</span></span><a class="headerlink" href="#indicative.indicators.SMA.timeperiod" title="Link to this definition">#</a></dt>
+<dd><p>The number of periods for the moving average.
+Defaults to 30.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PositiveInt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">timeperiod</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id6" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.SMA.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">close</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/sma.html#SMA.compute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.SMA.compute" title="Link to this definition">#</a></dt>
+<dd><p>Computes the SMA indicator for a given array of closing prices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>close</strong> (<em>Array</em>) – An array of closing prices.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the computed SMA values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>SMA_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.SMA._">
+<span class="sig-name descname"><span class="pre">_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/sma.html#SMA._"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.SMA._" title="Link to this definition">#</a></dt>
+<dd><p>Computes the SMA indicator for a given record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rec</strong> (<a class="reference internal" href="../history/index.html#indicative.history.Record" title="indicative.history.Record"><em>Record</em></a>) – A record containing data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the computed SMA values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>SMA_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="indicative.indicators.STOCH">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">indicative.indicators.</span></span><span class="sig-name descname"><span class="pre">STOCH</span></span><a class="reference internal" href="../../../_modules/indicative/indicators/stoch.html#STOCH"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.STOCH" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" title="indicative.protocols.IndicatorProtocol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.protocols.IndicatorProtocol</span></code></a>, <a class="reference internal" href="../mixins/index.html#indicative.mixins.IndicatorMixin" title="indicative.mixins.IndicatorMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indicative.mixins.IndicatorMixin</span></code></a></p>
+<div class="graphviz"><img src="../../../_images/inheritance-79cbc9b64cc97727e899d3e9f9912e0b0da4c094.png" alt="Inheritance diagram of indicative.indicators.STOCH" usemap="#inheritancebe4828ab1d" class="inheritance graphviz" /></div>
+<map id="inheritancebe4828ab1d" name="inheritancebe4828ab1d">
+<area shape="rect" id="node2" href="../mixins/index.html#indicative.mixins.IndicatorMixin" target="_top" title="A mixin class for indicators." alt="" coords="257,55,371,80"/>
+<area shape="rect" id="node5" href="stoch/index.html#indicative.indicators.stoch.STOCH" target="_top" title="Stochastic Oscillator (STOCH)" alt="" coords="428,31,500,56"/>
+<area shape="rect" id="node3" href="../protocols/index.html#indicative.protocols.IndicatorProtocol" target="_top" title="Protocol for indicators." alt="" coords="248,5,380,31"/>
+</map><p>Stochastic Oscillator (STOCH)</p>
+<p>The Stochastic Oscillator is a momentum indicator that compares the
+closing price of a security to its price range over a given period of time.
+The indicator is used to identify overbought and oversold conditions in the
+market.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.STOCH.fastk_period">
+<span class="sig-name descname"><span class="pre">fastk_period</span></span><a class="headerlink" href="#indicative.indicators.STOCH.fastk_period" title="Link to this definition">#</a></dt>
+<dd><p>The number of periods used for the fast k line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.STOCH.slowk_period">
+<span class="sig-name descname"><span class="pre">slowk_period</span></span><a class="headerlink" href="#indicative.indicators.STOCH.slowk_period" title="Link to this definition">#</a></dt>
+<dd><p>The number of periods used for the slow k line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.STOCH.slowd_period">
+<span class="sig-name descname"><span class="pre">slowd_period</span></span><a class="headerlink" href="#indicative.indicators.STOCH.slowd_period" title="Link to this definition">#</a></dt>
+<dd><p>The number of periods used for the slow d line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.STOCH.slowk_matype">
+<span class="sig-name descname"><span class="pre">slowk_matype</span></span><a class="headerlink" href="#indicative.indicators.STOCH.slowk_matype" title="Link to this definition">#</a></dt>
+<dd><p>The type of moving average used for the slow k line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../enums/index.html#indicative.enums.MA_Type" title="indicative.enums.MA_Type">MA_Type</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="indicative.indicators.STOCH.slowd_matype">
+<span class="sig-name descname"><span class="pre">slowd_matype</span></span><a class="headerlink" href="#indicative.indicators.STOCH.slowd_matype" title="Link to this definition">#</a></dt>
+<dd><p>The type of moving average used for the slow d line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../enums/index.html#indicative.enums.MA_Type" title="indicative.enums.MA_Type">MA_Type</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">fastk_period</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id7" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">slowk_period</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id8" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">slowd_period</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pydantic.PositiveInt</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id9" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">slowk_matype</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../enums/index.html#indicative.enums.MA_Type" title="indicative.enums.MA_Type"><span class="pre">indicative.enums.MA_Type</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id10" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">slowd_matype</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../enums/index.html#indicative.enums.MA_Type" title="indicative.enums.MA_Type"><span class="pre">indicative.enums.MA_Type</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id11" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.STOCH.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">close</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/stoch.html#STOCH.compute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.STOCH.compute" title="Link to this definition">#</a></dt>
+<dd><p>Compute the Stochastic Oscillator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>high</strong> (<em>Array</em>) – An array of high prices.</p></li>
+<li><p><strong>low</strong> (<em>Array</em>) – An array of low prices.</p></li>
+<li><p><strong>close</strong> (<em>Array</em>) – An array of close prices.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the computed STOCH values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>STOCH_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="indicative.indicators.STOCH._">
+<span class="sig-name descname"><span class="pre">_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">close</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indicative/indicators/stoch.html#STOCH._"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#indicative.indicators.STOCH._" title="Link to this definition">#</a></dt>
+<dd><p>Compute the Stochastic Oscillator using Records.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>high</strong> (<a class="reference internal" href="../history/index.html#indicative.history.Record" title="indicative.history.Record"><em>Record</em></a>) – A Record containing high prices.</p></li>
+<li><p><strong>low</strong> (<a class="reference internal" href="../history/index.html#indicative.history.Record" title="indicative.history.Record"><em>Record</em></a>) – A Record containing low prices.</p></li>
+<li><p><strong>close</strong> (<a class="reference internal" href="../history/index.html#indicative.history.Record" title="indicative.history.Record"><em>Record</em></a>) – A Record containing close prices.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of namedtuples containing the computed STOCH values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>STOCH_Return</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../history/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">indicative.history</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="adx/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">indicative.indicators.adx</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.ADX"><code class="docutils literal notranslate"><span class="pre">ADX</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.ADX.timeperiod"><code class="docutils literal notranslate"><span class="pre">ADX.timeperiod</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">ADX.timeperiod</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.ADX.compute"><code class="docutils literal notranslate"><span class="pre">ADX.compute()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.ADX._"><code class="docutils literal notranslate"><span class="pre">ADX._()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.BBANDS"><code class="docutils literal notranslate"><span class="pre">BBANDS</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.BBANDS.timeperiod"><code class="docutils literal notranslate"><span class="pre">BBANDS.timeperiod</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.BBANDS.nbdevup"><code class="docutils literal notranslate"><span class="pre">BBANDS.nbdevup</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.BBANDS.nbdevdn"><code class="docutils literal notranslate"><span class="pre">BBANDS.nbdevdn</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.BBANDS.matype"><code class="docutils literal notranslate"><span class="pre">BBANDS.matype</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">BBANDS.timeperiod</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><code class="docutils literal notranslate"><span class="pre">BBANDS.nbdevup</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><code class="docutils literal notranslate"><span class="pre">BBANDS.nbdevdn</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><code class="docutils literal notranslate"><span class="pre">BBANDS.matype</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.BBANDS.compute"><code class="docutils literal notranslate"><span class="pre">BBANDS.compute()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.BBANDS._"><code class="docutils literal notranslate"><span class="pre">BBANDS._()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.EMA"><code class="docutils literal notranslate"><span class="pre">EMA</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.EMA.timeperiod"><code class="docutils literal notranslate"><span class="pre">EMA.timeperiod</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.EMA.compute"><code class="docutils literal notranslate"><span class="pre">EMA.compute()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.EMA._"><code class="docutils literal notranslate"><span class="pre">EMA._()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.MACD"><code class="docutils literal notranslate"><span class="pre">MACD</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.MACD.fast_period"><code class="docutils literal notranslate"><span class="pre">MACD.fast_period</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.MACD.slow_period"><code class="docutils literal notranslate"><span class="pre">MACD.slow_period</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.MACD.signal_period"><code class="docutils literal notranslate"><span class="pre">MACD.signal_period</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.MACD.compute"><code class="docutils literal notranslate"><span class="pre">MACD.compute()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.MACD._"><code class="docutils literal notranslate"><span class="pre">MACD._()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.RSI"><code class="docutils literal notranslate"><span class="pre">RSI</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.RSI.timeperiod"><code class="docutils literal notranslate"><span class="pre">RSI.timeperiod</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><code class="docutils literal notranslate"><span class="pre">RSI.timeperiod</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.RSI.compute"><code class="docutils literal notranslate"><span class="pre">RSI.compute()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.RSI._"><code class="docutils literal notranslate"><span class="pre">RSI._()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.SMA"><code class="docutils literal notranslate"><span class="pre">SMA</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.SMA.timeperiod"><code class="docutils literal notranslate"><span class="pre">SMA.timeperiod</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><code class="docutils literal notranslate"><span class="pre">SMA.timeperiod</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.SMA.compute"><code class="docutils literal notranslate"><span class="pre">SMA.compute()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.SMA._"><code class="docutils literal notranslate"><span class="pre">SMA._()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.STOCH"><code class="docutils literal notranslate"><span class="pre">STOCH</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.STOCH.fastk_period"><code class="docutils literal notranslate"><span class="pre">STOCH.fastk_period</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.STOCH.slowk_period"><code class="docutils literal notranslate"><span class="pre">STOCH.slowk_period</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.STOCH.slowd_period"><code class="docutils literal notranslate"><span class="pre">STOCH.slowd_period</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.STOCH.slowk_matype"><code class="docutils literal notranslate"><span class="pre">STOCH.slowk_matype</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.STOCH.slowd_matype"><code class="docutils literal notranslate"><span class="pre">STOCH.slowd_matype</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><code class="docutils literal notranslate"><span class="pre">STOCH.fastk_period</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><code class="docutils literal notranslate"><span class="pre">STOCH.slowk_period</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><code class="docutils literal notranslate"><span class="pre">STOCH.slowd_period</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><code class="docutils literal notranslate"><span class="pre">STOCH.slowk_matype</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><code class="docutils literal notranslate"><span class="pre">STOCH.slowd_matype</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.STOCH.compute"><code class="docutils literal notranslate"><span class="pre">STOCH.compute()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indicative.indicators.STOCH._"><code class="docutils literal notranslate"><span class="pre">STOCH._()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/autoapi/indicative/indicators/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Kachain Fuangsung.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

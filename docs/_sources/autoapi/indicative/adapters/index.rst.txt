@@ -1,0 +1,325 @@
+indicative.adapters
+===================
+
+.. py:module:: indicative.adapters
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.adapters.Select
+   indicative.adapters.Transform
+   indicative.adapters.Filter
+   indicative.adapters.Head
+   indicative.adapters.Tail
+   indicative.adapters.Attr
+   indicative.adapters.Mean
+   indicative.adapters.Reverse
+   indicative.adapters.Sort
+
+
+Module Contents
+---------------
+
+.. py:class:: Select
+
+   Bases: :py:obj:`indicative.protocols.AdapterProtocol`, :py:obj:`indicative.mixins.AdapterMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.adapters.Select
+      :parts: 1
+      :private-bases:
+
+
+   Select adapter.
+
+   Select adapter calls the provided function with the input sequence and
+   returns the result.
+
+   :param func: A callable that takes a sequence and returns a value.
+
+   :returns: The result of calling the provided function with the input sequence.
+
+   .. rubric:: Example
+
+   >>> adapter = Select(lambda x: x[0])
+   >>> [1, 2, 3] | adapter
+   1
+
+
+   .. py:attribute:: func
+      :type:  collections.abc.Callable[[collections.abc.Sequence[Select.T]], Any]
+
+
+   .. py:method:: __ror__(other)
+
+      Pipeline magic method.
+
+      :param other: The input sequence.
+
+      :returns: The result of calling the provided function with the input sequence.
+
+
+
+.. py:class:: Transform
+
+   Bases: :py:obj:`indicative.protocols.AdapterProtocol`, :py:obj:`indicative.mixins.AdapterMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.adapters.Transform
+      :parts: 1
+      :private-bases:
+
+
+   Transform adapter.
+
+   The Transform adapter applies the provided function to each element in the
+   input sequence and returns the result.
+
+   :param func: A callable that takes a single element and returns a value.
+
+   :returns: The result of calling the provided function with each element in the
+             input sequence.
+
+   .. rubric:: Example
+
+   >>> adapter = Transform(lambda x: x**2)
+   >>> [1, 2, 3] | adapter
+   [1, 4, 9]
+
+
+   .. py:attribute:: func
+      :type:  collections.abc.Callable[[collections.abc.Sequence[Transform.T]], collections.abc.Sequence[Transform.T]]
+
+
+   .. py:method:: __ror__(other)
+
+      Pipeline magic method.
+
+      :param other: The input sequence.
+
+      :returns: The result of calling the provided function with each element in the
+                input sequence.
+
+
+
+.. py:class:: Filter
+
+   Bases: :py:obj:`indicative.protocols.AdapterProtocol`, :py:obj:`indicative.mixins.AdapterMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.adapters.Filter
+      :parts: 1
+      :private-bases:
+
+
+   Filter adapter.
+
+   The Filter adapter applies the provided function to each element in the
+   input sequence and returns the result.
+
+   :param func: A callable that takes a single element and returns a boolean.
+
+   :returns: The list of elements in the input sequence for which the provided
+             function returns True.
+
+   .. rubric:: Example
+
+   >>> adapter = Filter(lambda x: x > 0)
+   >>> [1, -2, 3] | adapter
+   [1, 3]
+
+
+   .. py:attribute:: func
+      :type:  collections.abc.Callable[[collections.abc.Sequence[Filter.T]], collections.abc.Sequence[Filter.T]]
+
+
+   .. py:method:: __ror__(other)
+
+      Pipeline magic method.
+
+      :param other: The input sequence.
+
+      :returns: The list of elements in the input sequence for which the provided
+                function returns True.
+
+
+
+.. py:class:: Head
+
+   Bases: :py:obj:`indicative.mixins.SelectMixin`\ [\ :py:obj:`T`\ ]
+
+   .. autoapi-inheritance-diagram:: indicative.adapters.Head
+      :parts: 1
+      :private-bases:
+
+
+   Selects the first `n` elements from a sequence.
+
+   .. attribute:: n
+
+      The number of elements to select from the start of the sequence.
+
+      :type: PositiveInt
+
+
+   .. py:attribute:: n
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: __post_init__()
+
+      Initializes the selection function.
+
+
+
+.. py:class:: Tail
+
+   Bases: :py:obj:`indicative.mixins.SelectMixin`\ [\ :py:obj:`T`\ ]
+
+   .. autoapi-inheritance-diagram:: indicative.adapters.Tail
+      :parts: 1
+      :private-bases:
+
+
+   Selects the last `n` elements from a sequence.
+
+   .. attribute:: n
+
+      The number of elements to select from the end of the sequence.
+
+
+   .. py:attribute:: n
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: __post_init__()
+
+      Initializes the selection function to select the last `n` elements.
+
+
+
+.. py:class:: Attr
+
+   Bases: :py:obj:`indicative.mixins.SelectMixin`\ [\ :py:obj:`T`\ ]
+
+   .. autoapi-inheritance-diagram:: indicative.adapters.Attr
+      :parts: 1
+      :private-bases:
+
+
+   Selects an attribute from each element in a sequence.
+
+   This adapter uses the specified attribute name to extract the attribute's value from each element in the input sequence.
+
+   .. attribute:: attr
+
+      The name of the attribute to be selected from each element.
+
+      :type: str
+
+
+   .. py:attribute:: attr
+      :type:  str
+
+
+   .. py:method:: __post_init__()
+
+      Initializes the selection function to extract the specified attribute.
+
+
+
+.. py:class:: Mean
+
+   Bases: :py:obj:`indicative.mixins.SelectMixin`\ [\ :py:obj:`T`\ ]
+
+   .. autoapi-inheritance-diagram:: indicative.adapters.Mean
+      :parts: 1
+      :private-bases:
+
+
+   Computes the mean of a sequence of numbers.
+
+   This adapter takes a sequence of numbers as input and returns the mean of the
+   sequence.
+
+   .. rubric:: Examples
+
+   >>> [1, 2, 3, 4, 5] | Mean()
+   3.0
+
+   .. attribute:: select
+
+      The selection function to compute the mean.
+
+      :type: Select
+
+
+   .. py:method:: __post_init__()
+
+      Initializes the selection function to compute the mean.
+
+
+
+.. py:class:: Reverse
+
+   Bases: :py:obj:`indicative.mixins.SelectMixin`\ [\ :py:obj:`T`\ ]
+
+   .. autoapi-inheritance-diagram:: indicative.adapters.Reverse
+      :parts: 1
+      :private-bases:
+
+
+   Reverses the order of the elements in a sequence.
+
+   This adapter takes a sequence as input and returns a new sequence with the elements in reverse order.
+
+   .. rubric:: Examples
+
+   >>> [1, 2, 3, 4, 5] | Reverse()
+   [5, 4, 3, 2, 1]
+
+
+   .. py:method:: __post_init__()
+
+      Initializes the selection function to reverse the sequence.
+
+
+
+.. py:class:: Sort
+
+   Bases: :py:obj:`indicative.mixins.SelectMixin`\ [\ :py:obj:`T`\ ]
+
+   .. autoapi-inheritance-diagram:: indicative.adapters.Sort
+      :parts: 1
+      :private-bases:
+
+
+   Sorts the elements in a sequence.
+
+   This adapter sorts the elements in the input sequence in ascending or
+   descending order based on the `reverse` attribute.
+
+   .. attribute:: reverse
+
+      If True, sort the sequence in descending order.
+      Defaults to False.
+
+      :type: bool
+
+
+   .. py:attribute:: reverse
+      :type:  bool
+      :value: None
+
+
+
+   .. py:method:: __post_init__()
+
+      Initializes the selection function to sort the sequence.
+
+
+

@@ -1,0 +1,528 @@
+indicative.indicators
+=====================
+
+.. py:module:: indicative.indicators
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/indicative/indicators/adx/index
+   /autoapi/indicative/indicators/bbands/index
+   /autoapi/indicative/indicators/ema/index
+   /autoapi/indicative/indicators/macd/index
+   /autoapi/indicative/indicators/rsi/index
+   /autoapi/indicative/indicators/sma/index
+   /autoapi/indicative/indicators/stoch/index
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.indicators.ADX
+   indicative.indicators.BBANDS
+   indicative.indicators.EMA
+   indicative.indicators.MACD
+   indicative.indicators.RSI
+   indicative.indicators.SMA
+   indicative.indicators.STOCH
+
+
+Package Contents
+----------------
+
+.. py:class:: ADX
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.ADX
+      :parts: 1
+      :private-bases:
+
+
+   Computes the Average Directional Index (ADX).
+
+   The Average Directional Index (ADX) is a technical indicator that measures the
+   strength of a trend. It is based on the difference between the highest and lowest
+   prices over a given period of time. The ADX is calculated as the absolute value of
+   the difference between the highest and lowest prices divided by the sum of the
+   absolute values of the differences between consecutive prices.
+
+   .. attribute:: timeperiod
+
+      The number of periods to use for the calculation of the ADX.
+
+      :type: int
+
+
+   .. py:attribute:: timeperiod
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: compute(high, low, close)
+
+      Computes the Average Directional Index (ADX) for a given set of high, low,
+      and close price data.
+
+      :param high: An array of high prices.
+      :type high: Array
+      :param low: An array of low prices.
+      :type low: Array
+      :param close: An array of close prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the computed ADX values.
+      :rtype: STOCH_Return
+
+
+
+   .. py:method:: _(high, low, close)
+
+      Computes the Average Directional Index (ADX) using high, low, and close
+      price data records.
+
+      :param high: A record containing high prices.
+      :type high: Record
+      :param low: A record containing low prices.
+      :type low: Record
+      :param close: A record containing close prices.
+      :type close: Record
+
+      :returns: A list of namedtuples containing the computed ADX values.
+      :rtype: STOCH_Return
+
+
+
+.. py:class:: BBANDS
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.BBANDS
+      :parts: 1
+      :private-bases:
+
+
+   Bollinger Bands (BBANDS) indicator.
+
+   .. attribute:: timeperiod
+
+      The number of periods for the moving average.
+
+      :type: PositiveInt
+
+   .. attribute:: nbdevup
+
+      The number of standard deviations above the moving average.
+
+      :type: PositiveInt
+
+   .. attribute:: nbdevdn
+
+      The number of standard deviations below the moving average.
+
+      :type: PositiveInt
+
+   .. attribute:: matype
+
+      The type of moving average to use.
+
+      :type: MA_Type
+
+
+   .. py:attribute:: timeperiod
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: nbdevup
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: nbdevdn
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: matype
+      :type:  indicative.enums.MA_Type
+      :value: None
+
+
+
+   .. py:method:: compute(close)
+
+      Computes the Bollinger Bands for a given array of closing prices.
+
+      :param close: An array of closing prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the upper, middle, and lower bands.
+      :rtype: BBANDS_Return
+
+
+
+   .. py:method:: _(rec)
+
+      Computes the Bollinger Bands for a given record.
+
+      :param rec: A record containing data.
+      :type rec: Record
+
+      :returns: A list of namedtuples containing the upper, middle, and lower bands.
+      :rtype: BBANDS_Return
+
+
+
+.. py:class:: EMA
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.EMA
+      :parts: 1
+      :private-bases:
+
+
+   Exponential Moving Average (EMA).
+
+   The Exponential Moving Average (EMA) is a type of moving average that gives more
+   weight to more recent prices. It is calculated by taking the average price of a
+   security over a specified period of time, with more recent prices given more
+   weight.
+
+   :param timeperiod: The number of bars to use in the calculation of the EMA.
+                      Defaults to 30.
+   :type timeperiod: int
+
+
+   .. py:attribute:: timeperiod
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: compute(close)
+
+      Compute the EMA.
+
+      :param close: The array of closing prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the computed EMA values.
+      :rtype: EMA_Return
+
+
+
+   .. py:method:: _(rec)
+
+      Compute the EMA using a Record object.
+
+      :param rec: A Record object containing the data.
+      :type rec: Record
+
+      :returns: A list of namedtuples containing the computed EMA values.
+      :rtype: EMA_Return
+
+
+
+.. py:class:: MACD
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.MACD
+      :parts: 1
+      :private-bases:
+
+
+   Moving Average Convergence Divergence (MACD).
+
+   The MACD is a widely used indicator that plots the difference between a
+   short-term and long-term moving average of a security's price. The MACD is
+   calculated by subtracting the long-term moving average from the short-term
+   moving average.
+
+   :param fast_period: The number of bars used to calculate the
+                       fast moving average. Defaults to 12.
+   :type fast_period: PositiveInt
+   :param slow_period: The number of bars used to calculate the
+                       slow moving average. Defaults to 26.
+   :type slow_period: PositiveInt
+   :param signal_period: The number of bars used to calculate the
+                         signal line. Defaults to 9.
+   :type signal_period: PositiveInt
+
+   :returns:
+
+             A list of namedtuples containing the MACD, MACD signal and
+                 MACD histogram values.
+   :rtype: MACD_Return
+
+
+   .. py:attribute:: fast_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: slow_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: signal_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: compute(close)
+
+      Compute the MACD.
+
+      :param close: A numpy array of close prices.
+      :type close: Array
+
+      :returns:
+
+                A list of namedtuples containing the MACD, MACD signal
+                    and MACD histogram values.
+      :rtype: MACD_Return
+
+
+
+   .. py:method:: _(rec)
+
+      Compute the MACD.
+
+      :param rec: A Record object.
+      :type rec: Record
+
+      :returns:
+
+                A list of namedtuples containing the MACD, MACD signal
+                    and MACD histogram values.
+      :rtype: MACD_Return
+
+
+
+.. py:class:: RSI
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.RSI
+      :parts: 1
+      :private-bases:
+
+
+   Computes the Relative Strength Index (RSI) for a given set of price data.
+
+   The Relative Strength Index (RSI) is a technical indicator used to measure the
+   strength of a trend. It is based on the ratio of the average gain of up days to the
+   average loss of down days over a given period of time.
+
+   .. attribute:: timeperiod
+
+      The number of periods to use for the calculation of the RSI.
+
+      :type: int
+
+
+   .. py:attribute:: timeperiod
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: compute(close)
+
+      Computes the Relative Strength Index (RSI) for a given set of close prices.
+
+      :param close: An array of close prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the computed RSI values.
+      :rtype: RSI_Return
+
+
+
+   .. py:method:: _(rec)
+
+      Computes the Relative Strength Index (RSI) using a Record object.
+
+      :param rec: A Record object containing close prices.
+      :type rec: Record
+
+      :returns: A list of namedtuples containing the computed RSI values.
+      :rtype: RSI_Return
+
+
+
+.. py:class:: SMA
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.SMA
+      :parts: 1
+      :private-bases:
+
+
+   Simple Moving Average (SMA) indicator.
+
+   .. attribute:: timeperiod
+
+      The number of periods for the moving average.
+      Defaults to 30.
+
+      :type: PositiveInt
+
+
+   .. py:attribute:: timeperiod
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: compute(close)
+
+      Computes the SMA indicator for a given array of closing prices.
+
+      :param close: An array of closing prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the computed SMA values.
+      :rtype: SMA_Return
+
+
+
+   .. py:method:: _(rec)
+
+      Computes the SMA indicator for a given record.
+
+      :param rec: A record containing data.
+      :type rec: Record
+
+      :returns: A list of namedtuples containing the computed SMA values.
+      :rtype: SMA_Return
+
+
+
+.. py:class:: STOCH
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.STOCH
+      :parts: 1
+      :private-bases:
+
+
+   Stochastic Oscillator (STOCH)
+
+   The Stochastic Oscillator is a momentum indicator that compares the
+   closing price of a security to its price range over a given period of time.
+   The indicator is used to identify overbought and oversold conditions in the
+   market.
+
+   .. attribute:: fastk_period
+
+      The number of periods used for the fast k line.
+
+      :type: int
+
+   .. attribute:: slowk_period
+
+      The number of periods used for the slow k line.
+
+      :type: int
+
+   .. attribute:: slowd_period
+
+      The number of periods used for the slow d line.
+
+      :type: int
+
+   .. attribute:: slowk_matype
+
+      The type of moving average used for the slow k line.
+
+      :type: MA_Type
+
+   .. attribute:: slowd_matype
+
+      The type of moving average used for the slow d line.
+
+      :type: MA_Type
+
+
+   .. py:attribute:: fastk_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: slowk_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: slowd_period
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: slowk_matype
+      :type:  indicative.enums.MA_Type
+      :value: None
+
+
+
+   .. py:attribute:: slowd_matype
+      :type:  indicative.enums.MA_Type
+      :value: None
+
+
+
+   .. py:method:: compute(high, low, close)
+
+      Compute the Stochastic Oscillator.
+
+      :param high: An array of high prices.
+      :type high: Array
+      :param low: An array of low prices.
+      :type low: Array
+      :param close: An array of close prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the computed STOCH values.
+      :rtype: STOCH_Return
+
+
+
+   .. py:method:: _(high, low, close)
+
+      Compute the Stochastic Oscillator using Records.
+
+      :param high: A Record containing high prices.
+      :type high: Record
+      :param low: A Record containing low prices.
+      :type low: Record
+      :param close: A Record containing close prices.
+      :type close: Record
+
+      :returns: A list of namedtuples containing the computed STOCH values.
+      :rtype: STOCH_Return
+
+
+

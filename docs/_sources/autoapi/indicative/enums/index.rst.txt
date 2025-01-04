@@ -1,0 +1,112 @@
+indicative.enums
+================
+
+.. py:module:: indicative.enums
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.enums.MA_Type
+
+
+Module Contents
+---------------
+
+.. py:class:: MA_Type(*args, **kwds)
+
+   Bases: :py:obj:`enum.Enum`
+
+   .. autoapi-inheritance-diagram:: indicative.enums.MA_Type
+      :parts: 1
+      :private-bases:
+
+
+   Moving average types.
+
+   The moving average types supported by the TALib library.
+
+   .. attribute:: SMA
+
+      The simple moving average.
+
+      :type: MA_Type
+
+   .. attribute:: EMA
+
+      The exponential moving average.
+
+      :type: MA_Type
+
+   .. attribute:: WMA
+
+      The weighted moving average.
+
+      :type: MA_Type
+
+   .. attribute:: DEMA
+
+      The double exponential moving average.
+
+      :type: MA_Type
+
+   .. attribute:: TEMA
+
+      The triple exponential moving average.
+
+      :type: MA_Type
+
+   .. attribute:: TRIMA
+
+      The triangular moving average.
+
+      :type: MA_Type
+
+   .. attribute:: KAMA
+
+      The Kaufman adaptive moving average.
+
+      :type: MA_Type
+
+   .. attribute:: MAMA
+
+      The MESA adaptive moving average.
+
+      :type: MA_Type
+
+   .. attribute:: T3
+
+      The triple exponential moving average.
+
+      :type: MA_Type
+
+
+   .. py:attribute:: SMA
+
+
+   .. py:attribute:: EMA
+
+
+   .. py:attribute:: WMA
+
+
+   .. py:attribute:: DEMA
+
+
+   .. py:attribute:: TEMA
+
+
+   .. py:attribute:: TRIMA
+
+
+   .. py:attribute:: KAMA
+
+
+   .. py:attribute:: MAMA
+
+
+   .. py:attribute:: T3
+
+

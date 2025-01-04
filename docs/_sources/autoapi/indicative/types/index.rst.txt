@@ -1,0 +1,64 @@
+indicative.types
+================
+
+.. py:module:: indicative.types
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   indicative.types.PositiveRealNumber
+   indicative.types.Array
+   indicative.types.ArrayFloat64
+   indicative.types.ArrayInt64
+   indicative.types.ArrayDatetime64
+   indicative.types.DataframeColumnNameMapping
+   indicative.types.Timestamp
+   indicative.types.ListFloat
+
+
+Module Contents
+---------------
+
+.. py:data:: PositiveRealNumber
+   :type:  TypeAlias
+   :value: PositiveInt | PositiveFloat
+
+
+.. py:data:: Array
+   :type:  TypeAlias
+   :value: np.ndarray
+
+
+.. py:data:: ArrayFloat64
+   :type:  TypeAlias
+   :value: npt.NDArray[np.float64]
+
+
+.. py:data:: ArrayInt64
+   :type:  TypeAlias
+   :value: npt.NDArray[np.int64]
+
+
+.. py:data:: ArrayDatetime64
+   :type:  TypeAlias
+   :value: npt.NDArray[np.datetime64]
+
+
+.. py:data:: DataframeColumnNameMapping
+   :type:  TypeAlias
+   :value: dict[str, str]
+
+
+.. py:data:: Timestamp
+   :type:  TypeAlias
+   :value: datetime | pdts | np.datetime64
+
+
+.. py:data:: ListFloat
+   :type:  TypeAlias
+   :value: list[float]
+
+

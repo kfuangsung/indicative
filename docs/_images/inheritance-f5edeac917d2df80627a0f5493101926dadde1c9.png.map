@@ -1,0 +1,4 @@
+<map id="inheritance47b952f36a" name="inheritance47b952f36a">
+<area shape="rect" id="node1" href="#indicative.adapters.Attr" target="_top" title="Selects an attribute from each element in a sequence." alt="" coords="152,5,224,31"/>
+<area shape="rect" id="node2" href="../mixins/index.html#indicative.mixins.SelectMixin" target="_top" title="A mixin that provides a `__call__` method to call a stored selection function." alt="" coords="5,5,104,31"/>
+</map>

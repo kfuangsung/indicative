@@ -1,0 +1,107 @@
+indicative.indicators.adx
+=========================
+
+.. py:module:: indicative.indicators.adx
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   indicative.indicators.adx.ADX_Return
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.indicators.adx.adx
+   indicative.indicators.adx.ADX
+
+
+Module Contents
+---------------
+
+.. py:class:: adx
+
+   Bases: :py:obj:`tuple`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.adx.adx
+      :parts: 1
+      :private-bases:
+
+
+   .. py:attribute:: adx
+
+
+.. py:data:: ADX_Return
+   :type:  TypeAlias
+   :value: list[ADX_Output]
+
+
+.. py:class:: ADX
+
+   Bases: :py:obj:`indicative.protocols.IndicatorProtocol`, :py:obj:`indicative.mixins.IndicatorMixin`
+
+   .. autoapi-inheritance-diagram:: indicative.indicators.adx.ADX
+      :parts: 1
+      :private-bases:
+
+
+   Computes the Average Directional Index (ADX).
+
+   The Average Directional Index (ADX) is a technical indicator that measures the
+   strength of a trend. It is based on the difference between the highest and lowest
+   prices over a given period of time. The ADX is calculated as the absolute value of
+   the difference between the highest and lowest prices divided by the sum of the
+   absolute values of the differences between consecutive prices.
+
+   .. attribute:: timeperiod
+
+      The number of periods to use for the calculation of the ADX.
+
+      :type: int
+
+
+   .. py:attribute:: timeperiod
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:method:: compute(high, low, close)
+
+      Computes the Average Directional Index (ADX) for a given set of high, low,
+      and close price data.
+
+      :param high: An array of high prices.
+      :type high: Array
+      :param low: An array of low prices.
+      :type low: Array
+      :param close: An array of close prices.
+      :type close: Array
+
+      :returns: A list of namedtuples containing the computed ADX values.
+      :rtype: STOCH_Return
+
+
+
+   .. py:method:: _(high, low, close)
+
+      Computes the Average Directional Index (ADX) using high, low, and close
+      price data records.
+
+      :param high: A record containing high prices.
+      :type high: Record
+      :param low: A record containing low prices.
+      :type low: Record
+      :param close: A record containing close prices.
+      :type close: Record
+
+      :returns: A list of namedtuples containing the computed ADX values.
+      :rtype: STOCH_Return
+
+
+

@@ -1,0 +1,294 @@
+indicative.resampler
+====================
+
+.. py:module:: indicative.resampler
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   indicative.resampler.TimeUnit
+   indicative.resampler.Resampler
+   indicative.resampler.HistoryWithResampler
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   indicative.resampler.calc_timedelta
+   indicative.resampler.calc_next_timestamp
+   indicative.resampler.append_latest
+   indicative.resampler.pop_latest
+   indicative.resampler.replace_latest
+
+
+Module Contents
+---------------
+
+.. py:class:: TimeUnit
+
+   Bases: :py:obj:`enum.StrEnum`
+
+   .. autoapi-inheritance-diagram:: indicative.resampler.TimeUnit
+      :parts: 1
+      :private-bases:
+
+
+   TimeUnit is an enumeration of time units.
+
+
+   .. py:attribute:: SECOND
+      :value: 'second'
+
+
+
+   .. py:attribute:: MINUTE
+      :value: 'minute'
+
+
+
+   .. py:attribute:: HOUR
+      :value: 'hour'
+
+
+
+   .. py:attribute:: DAY
+      :value: 'day'
+
+
+
+.. py:function:: calc_timedelta(unit, n)
+
+   Calculate a pandas Timedelta object.
+
+   :param unit: The unit of time for the timedelta.
+   :type unit: TimeUnit
+   :param n: The number of units for the timedelta.
+   :type n: PositiveInt
+
+   :returns: A pandas Timedelta object representing the specified duration.
+   :rtype: pd.Timedelta
+
+
+.. py:function:: calc_next_timestamp(timestamp, timedelta)
+
+   Calculate the next timestamp given a starting timestamp and a timedelta.
+
+   :param timestamp: The starting timestamp.
+   :type timestamp: Timestamp
+   :param timedelta: The timedelta to add to the timestamp.
+   :type timedelta: pd.Timedelta
+
+   :returns: The resulting timestamp after adding the timedelta.
+   :rtype: pd.Timestamp
+
+
+.. py:function:: append_latest(history, input_)
+
+   Append the latest PriceDataPoint to the history.
+
+   :param history: The history object to which the input data point will be registered.
+   :type history: History
+   :param input_: The data point to be appended to the history.
+   :type input_: PriceDataPoint
+
+   :returns: None
+
+
+.. py:function:: pop_latest(history, input_)
+
+   Pop the latest data point from the history if it already exists.
+
+   :param history: The history object from which the latest data point will be popped.
+   :type history: History
+   :param input_: The data point to be compared with the history for uniqueness.
+   :type input_: PriceDataPoint
+
+   :returns: None
+
+
+.. py:function:: replace_latest(history, input_, next_timestamp, timestamp_field)
+
+   Replace the latest data point in the history if it's older than the given next timestamp.
+
+   :param history: The history object from which the latest data point will be popped and appended.
+   :type history: History
+   :param input_: The data point to be compared with the history for uniqueness.
+   :type input_: PriceDataPoint
+   :param next_timestamp: The timestamp of the next sample point to be compared with the history.
+   :type next_timestamp: pd.Timestamp
+   :param timestamp_field: The field name of the timestamp in the history object.
+   :type timestamp_field: str
+
+   :returns: None
+
+
+.. py:class:: Resampler
+
+   A resampler to resample a stream of PriceDataPoint into a fixed interval.
+
+   .. attribute:: n
+
+      The number of units for the timedelta.
+
+      :type: PositiveInt
+
+   .. attribute:: unit
+
+      The unit of time for the timedelta.
+
+      :type: TimeUnit
+
+   .. attribute:: timestamp_field
+
+      The field name of the timestamp in the history object.
+
+      :type: str
+
+
+   .. py:attribute:: n
+      :type:  pydantic.PositiveInt
+      :value: None
+
+
+
+   .. py:attribute:: unit
+      :type:  TimeUnit
+      :value: None
+
+
+
+   .. py:attribute:: timestamp_field
+      :type:  str
+      :value: None
+
+
+
+   .. py:method:: resample(input_, history)
+
+      Resample a stream of PriceDataPoint into a fixed interval.
+
+      :param input_: The data point to be resampled.
+      :type input_: PriceDataPoint
+      :param history: The history object to which the resampled data point will be registered.
+      :type history: History
+
+      :returns: None
+
+
+
+   .. py:method:: check_history(history)
+
+      Check if the history object has the timestamp field. If not, register it.
+
+      :param history: The history object to be checked.
+      :type history: History
+
+      :returns: None
+
+
+
+   .. py:method:: is_empty_timestamp(history)
+
+      Check if the timestamp field of the history object is empty.
+
+      :param history: The history object to be checked.
+      :type history: History
+
+      :returns: True if the timestamp field is empty, False otherwise.
+      :rtype: bool
+
+
+
+.. py:class:: HistoryWithResampler
+
+   Combines a History object with a Resampler for managing and resampling data points.
+
+   .. attribute:: history
+
+      The history object for storing and managing records.
+
+      :type: History
+
+   .. attribute:: resampler
+
+      The resampler object used to resample data points.
+
+      :type: Resampler
+
+   Properties:
+       records (list[Record[object]]): The list of records in the history.
+       fields (list[str]): The list of field names in the history.
+
+
+   .. py:attribute:: history
+      :type:  indicative.history.History
+      :value: None
+
+
+
+   .. py:attribute:: resampler
+      :type:  Resampler
+      :value: None
+
+
+
+   .. py:property:: records
+      :type: list[indicative.history.Record[object]]
+
+
+      Gets the records from the history.
+
+      :returns: The records in the history.
+      :rtype: list[Record[object]]
+
+
+   .. py:property:: fields
+      :type: list[str]
+
+
+      Gets the field names from the history.
+
+      :returns: The field names in the history.
+      :rtype: list[str]
+
+
+   .. py:method:: __getitem__(name)
+
+      Accesses a record by its name.
+
+      :param name: The name of the record.
+      :type name: str
+
+      :returns: The record associated with the given name.
+      :rtype: Record[object]
+
+
+
+   .. py:method:: __or__(other)
+
+      Allows using the `|` operator for applying a callable to the history.
+
+      :param other: The callable to be applied.
+      :type other: Callable
+
+      :returns: The result of applying the callable to the history.
+      :rtype: Any
+
+
+
+   .. py:method:: __ror__(other)
+
+      Allows using the `|` operator to add or resample data points into the history.
+
+      :param other: The data to be processed.
+      :type other: PriceDataPoint | PriceDataArray | NamedTupleProtocol | Iterable
+
+      :raises ValueError: If the type of `other` is unsupported.
+
+
+
