@@ -29,7 +29,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
   
   <!-- So that users can add custom icons -->
@@ -318,16 +318,16 @@
                 <article class="bd-article">
                   
   <h1>Source code for indicative.history</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
-<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Self</span><span class="p">,</span> <span class="n">TypeVar</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Self</span><span class="p">,</span> <span class="n">TypeVar</span>
 
-<span class="kn">from</span> <span class="nn">multimethod</span> <span class="kn">import</span> <span class="n">multimethod</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">PositiveInt</span>
-<span class="kn">from</span> <span class="nn">pydantic.dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">multimethod</span><span class="w"> </span><span class="kn">import</span> <span class="n">multimethod</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">PositiveInt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic.dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
 
-<span class="kn">from</span> <span class="nn">.datas</span> <span class="kn">import</span> <span class="n">PriceDataArray</span><span class="p">,</span> <span class="n">PriceDataPoint</span>
-<span class="kn">from</span> <span class="nn">.protocols</span> <span class="kn">import</span> <span class="n">NamedTupleProtocol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.datas</span><span class="w"> </span><span class="kn">import</span> <span class="n">PriceDataArray</span><span class="p">,</span> <span class="n">PriceDataPoint</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.protocols</span><span class="w"> </span><span class="kn">import</span> <span class="n">NamedTupleProtocol</span>
 
 <div class="viewcode-block" id="T">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.T">[docs]</a>
@@ -338,7 +338,7 @@
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <div class="viewcode-block" id="Record">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record">[docs]</a>
-<span class="k">class</span> <span class="nc">Record</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Record</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A record is an immutable data structure that stores a sequence of values.</span>
 
 <span class="sd">    Attributes:</span>
@@ -362,7 +362,7 @@
 
 <div class="viewcode-block" id="Record.__call__">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.__call__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">T</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">T</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Append a value or a sequence of values to the record.</span>
 
 <span class="sd">        Args:</span>
@@ -373,7 +373,7 @@
 
 <div class="viewcode-block" id="Record.__getitem__">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.__getitem__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a value from the record by index.</span>
 
 <span class="sd">        Args:</span>
@@ -391,7 +391,7 @@
 
 <div class="viewcode-block" id="Record.__len__">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.__len__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the number of values in the record.</span>
 
 <span class="sd">        Returns:</span>
@@ -402,7 +402,7 @@
 
 <div class="viewcode-block" id="Record.at">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.at">[docs]</a>
-    <span class="k">def</span> <span class="nf">at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a value from the record by index.</span>
 
 <span class="sd">        Args:</span>
@@ -416,7 +416,7 @@
 
 <div class="viewcode-block" id="Record.front">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.front">[docs]</a>
-    <span class="k">def</span> <span class="nf">front</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">front</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the first value from the record.</span>
 
 <span class="sd">        Returns:</span>
@@ -427,7 +427,7 @@
 
 <div class="viewcode-block" id="Record.back">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.back">[docs]</a>
-    <span class="k">def</span> <span class="nf">back</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">back</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the last value from the record.</span>
 
 <span class="sd">        Returns:</span>
@@ -438,7 +438,7 @@
 
 <div class="viewcode-block" id="Record.reset">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.reset">[docs]</a>
-    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset the record to an empty sequence.</span>
 
 <span class="sd">        Returns:</span>
@@ -450,7 +450,7 @@
     <span class="nd">@multimethod</span>
 <div class="viewcode-block" id="Record.append">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.append">[docs]</a>
-    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Append a value to the record.</span>
 
 <span class="sd">        Args:</span>
@@ -463,7 +463,7 @@
     <span class="nd">@append</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
 <div class="viewcode-block" id="Record._">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record._">[docs]</a>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Append a sequence of values to the record.</span>
 
 <span class="sd">        Args:</span>
@@ -475,7 +475,7 @@
 
 <div class="viewcode-block" id="Record.get_oldest">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.get_oldest">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_oldest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_oldest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the oldest value from the record.</span>
 
 <span class="sd">        Returns:</span>
@@ -486,7 +486,7 @@
 
 <div class="viewcode-block" id="Record.get_latest">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.get_latest">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_latest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_latest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the latest value from the record.</span>
 
 <span class="sd">        Returns:</span>
@@ -497,7 +497,7 @@
 
 <div class="viewcode-block" id="Record.pop_oldest">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.pop_oldest">[docs]</a>
-    <span class="k">def</span> <span class="nf">pop_oldest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pop_oldest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Pop the oldest value from the record.</span>
 
 <span class="sd">        Returns:</span>
@@ -508,7 +508,7 @@
 
 <div class="viewcode-block" id="Record.pop_latest">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.pop_latest">[docs]</a>
-    <span class="k">def</span> <span class="nf">pop_latest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pop_latest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Pop the latest value from the record.</span>
 
 <span class="sd">        Returns:</span>
@@ -519,7 +519,7 @@
 
 <div class="viewcode-block" id="Record.adjust_size">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.Record.adjust_size">[docs]</a>
-    <span class="k">def</span> <span class="nf">adjust_size</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">adjust_size</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adjust the size of the record by removing the oldest values until the</span>
 <span class="sd">        record is at or below the maximum size.</span>
 
@@ -546,7 +546,7 @@
 <span class="nd">@dataclass</span>
 <div class="viewcode-block" id="History">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.History">[docs]</a>
-<span class="k">class</span> <span class="nc">History</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">History</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A general purposed history -&gt; store anything.</span>
 
 <span class="sd">    Allows to register data into the history with a given name, and access</span>
@@ -564,7 +564,7 @@
     <span class="nd">@property</span>
 <div class="viewcode-block" id="History.records">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.History.records">[docs]</a>
-    <span class="k">def</span> <span class="nf">records</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Record</span><span class="p">[</span><span class="n">T</span><span class="p">]]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">records</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Record</span><span class="p">[</span><span class="n">T</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets the records from the history.</span>
 
 <span class="sd">        Returns:</span>
@@ -576,7 +576,7 @@
     <span class="nd">@property</span>
 <div class="viewcode-block" id="History.fields">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.History.fields">[docs]</a>
-    <span class="k">def</span> <span class="nf">fields</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fields</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets the field names from the history.</span>
 
 <span class="sd">        Returns:</span>
@@ -587,7 +587,7 @@
 
 <div class="viewcode-block" id="History.__getitem__">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.History.__getitem__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Record</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Record</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Accesses a record by its name.</span>
 
 <span class="sd">        Args:</span>
@@ -601,7 +601,7 @@
 
 <div class="viewcode-block" id="History.__or__">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.History.__or__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Callable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Callable</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Allows using the `|` operator for applying a callable to the history.</span>
 
 <span class="sd">        Args:</span>
@@ -615,7 +615,7 @@
 
 <div class="viewcode-block" id="History.__ror__">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.History.__ror__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__ror__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__ror__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Allows using the `|` operator to register data into the history.</span>
 
 <span class="sd">        Args:</span>
@@ -633,7 +633,7 @@
     <span class="nd">@multimethod</span>
 <div class="viewcode-block" id="History.register">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.History.register">[docs]</a>
-    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">data</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
@@ -662,7 +662,7 @@
     <span class="nd">@register</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
 <div class="viewcode-block" id="History._">
 <a class="viewcode-back" href="../../autoapi/indicative/history/index.html#indicative.history.History._">[docs]</a>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
@@ -681,7 +681,7 @@
 
 
     <span class="nd">@register</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">,</span> <span class="n">replace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">,</span> <span class="n">replace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Registers a record into the history with a given name.</span>
 
 <span class="sd">        Args:</span>
@@ -692,7 +692,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">record</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">record</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="p">)</span>
 
     <span class="nd">@register</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">,</span> <span class="n">replace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">,</span> <span class="n">replace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Registers a record into the history.</span>
 
 <span class="sd">        Args:</span>
@@ -702,7 +702,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">replace</span><span class="p">)</span>
 
     <span class="nd">@register</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">dictionary</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
         <span class="n">size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -720,7 +720,7 @@
         <span class="k">return</span>
 
     <span class="nd">@register</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">namedtuple</span><span class="p">:</span> <span class="n">NamedTupleProtocol</span><span class="p">,</span>
         <span class="n">size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -736,7 +736,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">namedtuple</span><span class="o">.</span><span class="n">_asdict</span><span class="p">(),</span> <span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="p">)</span>
 
     <span class="nd">@register</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">namedtuple_list</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">NamedTupleProtocol</span><span class="p">],</span>
         <span class="n">size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -753,7 +753,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">nt</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="p">)</span>
 
     <span class="nd">@register</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">price_data_arr</span><span class="p">:</span> <span class="n">PriceDataArray</span><span class="p">,</span>
         <span class="n">size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -769,7 +769,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">price_data_arr</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="p">)</span>
 
     <span class="nd">@register</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">price_data_pnt</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">,</span>
         <span class="n">size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>

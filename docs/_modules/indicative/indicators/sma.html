@@ -29,7 +29,7 @@
   <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
   
   <!-- So that users can add custom icons -->
@@ -318,19 +318,19 @@
                 <article class="bd-article">
                   
   <h1>Source code for indicative.indicators.sma</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">namedtuple</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">talib</span>
-<span class="kn">from</span> <span class="nn">multimethod</span> <span class="kn">import</span> <span class="n">multimethod</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">PositiveInt</span>
-<span class="kn">from</span> <span class="nn">pydantic.dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">talib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">multimethod</span><span class="w"> </span><span class="kn">import</span> <span class="n">multimethod</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">PositiveInt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic.dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
 
-<span class="kn">from</span> <span class="nn">..datas</span> <span class="kn">import</span> <span class="n">PriceDataArray</span>
-<span class="kn">from</span> <span class="nn">..history</span> <span class="kn">import</span> <span class="n">History</span><span class="p">,</span> <span class="n">Record</span>
-<span class="kn">from</span> <span class="nn">..mixins</span> <span class="kn">import</span> <span class="n">IndicatorMixin</span>
-<span class="kn">from</span> <span class="nn">..protocols</span> <span class="kn">import</span> <span class="n">IndicatorProtocol</span>
-<span class="kn">from</span> <span class="nn">..types</span> <span class="kn">import</span> <span class="n">Array</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..datas</span><span class="w"> </span><span class="kn">import</span> <span class="n">PriceDataArray</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..history</span><span class="w"> </span><span class="kn">import</span> <span class="n">History</span><span class="p">,</span> <span class="n">Record</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..mixins</span><span class="w"> </span><span class="kn">import</span> <span class="n">IndicatorMixin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..protocols</span><span class="w"> </span><span class="kn">import</span> <span class="n">IndicatorProtocol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Array</span>
 
 <div class="viewcode-block" id="sma.sma">
 <a class="viewcode-back" href="../../../autoapi/indicative/indicators/sma/index.html#indicative.indicators.sma.sma">[docs]</a>
@@ -348,7 +348,7 @@
 <span class="nd">@dataclass</span>
 <div class="viewcode-block" id="SMA">
 <a class="viewcode-back" href="../../../autoapi/indicative/indicators/sma/index.html#indicative.indicators.SMA">[docs]</a>
-<span class="k">class</span> <span class="nc">SMA</span><span class="p">(</span><span class="n">IndicatorProtocol</span><span class="p">,</span> <span class="n">IndicatorMixin</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SMA</span><span class="p">(</span><span class="n">IndicatorProtocol</span><span class="p">,</span> <span class="n">IndicatorMixin</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Simple Moving Average (SMA) indicator.</span>
 
 <span class="sd">    Attributes:</span>
@@ -364,7 +364,7 @@
     <span class="nd">@multimethod</span>
 <div class="viewcode-block" id="SMA.compute">
 <a class="viewcode-back" href="../../../autoapi/indicative/indicators/sma/index.html#indicative.indicators.SMA.compute">[docs]</a>
-    <span class="k">def</span> <span class="nf">compute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">close</span><span class="p">:</span> <span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SMA_Return</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">compute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">close</span><span class="p">:</span> <span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SMA_Return</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes the SMA indicator for a given array of closing prices.</span>
 
 <span class="sd">        Args:</span>
@@ -380,7 +380,7 @@
     <span class="nd">@compute</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
 <div class="viewcode-block" id="SMA._">
 <a class="viewcode-back" href="../../../autoapi/indicative/indicators/sma/index.html#indicative.indicators.SMA._">[docs]</a>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec</span><span class="p">:</span> <span class="n">Record</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SMA_Return</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec</span><span class="p">:</span> <span class="n">Record</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SMA_Return</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes the SMA indicator for a given record.</span>
 
 <span class="sd">        Args:</span>
@@ -393,7 +393,7 @@
 
 
     <span class="nd">@compute</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">,</span> <span class="n">field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;close&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SMA_Return</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">,</span> <span class="n">field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;close&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SMA_Return</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes the SMA indicator using a History object and a specified field.</span>
 
 <span class="sd">        Args:</span>
@@ -407,7 +407,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">history</span><span class="p">[</span><span class="n">field</span><span class="p">])</span>
 
     <span class="nd">@compute</span><span class="o">.</span><span class="n">register</span>  <span class="c1"># type: ignore</span>
-    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">price_data_arr</span><span class="p">:</span> <span class="n">PriceDataArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SMA_Return</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">price_data_arr</span><span class="p">:</span> <span class="n">PriceDataArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SMA_Return</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes the SMA indicator using a PriceDataArray.</span>
 
 <span class="sd">        Args:</span>

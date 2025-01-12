@@ -29,7 +29,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
   
   <!-- So that users can add custom icons -->
@@ -318,14 +318,14 @@
                 <article class="bd-article">
                   
   <h1>Source code for indicative.protocols</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Callable</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">ClassVar</span><span class="p">,</span> <span class="n">Protocol</span><span class="p">,</span> <span class="n">runtime_checkable</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">ClassVar</span><span class="p">,</span> <span class="n">Protocol</span><span class="p">,</span> <span class="n">runtime_checkable</span>
 
 
 <span class="nd">@runtime_checkable</span>
 <div class="viewcode-block" id="NamedTupleProtocol">
 <a class="viewcode-back" href="../../autoapi/indicative/protocols/index.html#indicative.protocols.NamedTupleProtocol">[docs]</a>
-<span class="k">class</span> <span class="nc">NamedTupleProtocol</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">NamedTupleProtocol</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Protocol for named tuples.</span>
 
 <span class="sd">    This protocol defines the methods that a named tuple must implement.</span>
@@ -340,17 +340,17 @@
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="NamedTupleProtocol._make">
 <a class="viewcode-back" href="../../autoapi/indicative/protocols/index.html#indicative.protocols.NamedTupleProtocol._make">[docs]</a>
-    <span class="k">def</span> <span class="nf">_make</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span> <span class="o">...</span></div>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_make</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span> <span class="o">...</span></div>
 
 
 <div class="viewcode-block" id="NamedTupleProtocol._asdict">
 <a class="viewcode-back" href="../../autoapi/indicative/protocols/index.html#indicative.protocols.NamedTupleProtocol._asdict">[docs]</a>
-    <span class="k">def</span> <span class="nf">_asdict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span> <span class="o">...</span></div>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_asdict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span> <span class="o">...</span></div>
 
 
 <div class="viewcode-block" id="NamedTupleProtocol._replace">
 <a class="viewcode-back" href="../../autoapi/indicative/protocols/index.html#indicative.protocols.NamedTupleProtocol._replace">[docs]</a>
-    <span class="k">def</span> <span class="nf">_replace</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="o">...</span></div>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_replace</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="o">...</span></div>
 </div>
 
 
@@ -358,7 +358,7 @@
 <span class="nd">@runtime_checkable</span>
 <div class="viewcode-block" id="IndicatorProtocol">
 <a class="viewcode-back" href="../../autoapi/indicative/protocols/index.html#indicative.protocols.IndicatorProtocol">[docs]</a>
-<span class="k">class</span> <span class="nc">IndicatorProtocol</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">IndicatorProtocol</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Protocol for indicators.</span>
 
 <span class="sd">    This protocol defines the methods that an indicator must implement.</span>
@@ -369,7 +369,7 @@
 
 <div class="viewcode-block" id="IndicatorProtocol.compute">
 <a class="viewcode-back" href="../../autoapi/indicative/protocols/index.html#indicative.protocols.IndicatorProtocol.compute">[docs]</a>
-    <span class="k">def</span> <span class="nf">compute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="o">...</span></div>
+    <span class="k">def</span><span class="w"> </span><span class="nf">compute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="o">...</span></div>
 </div>
 
 
@@ -377,7 +377,7 @@
 <span class="nd">@runtime_checkable</span>
 <div class="viewcode-block" id="AdapterProtocol">
 <a class="viewcode-back" href="../../autoapi/indicative/protocols/index.html#indicative.protocols.AdapterProtocol">[docs]</a>
-<span class="k">class</span> <span class="nc">AdapterProtocol</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AdapterProtocol</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Protocol for adapters.</span>
 
 <span class="sd">    This protocol defines the methods that an adapter must implement.</span>

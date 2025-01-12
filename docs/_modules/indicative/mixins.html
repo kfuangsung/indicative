@@ -29,7 +29,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
   
   <!-- So that users can add custom icons -->
@@ -318,13 +318,13 @@
                 <article class="bd-article">
                   
   <h1>Source code for indicative.mixins</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Iterable</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
 
 
 <div class="viewcode-block" id="IndicatorMixin">
 <a class="viewcode-back" href="../../autoapi/indicative/mixins/index.html#indicative.mixins.IndicatorMixin">[docs]</a>
-<span class="k">class</span> <span class="nc">IndicatorMixin</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">IndicatorMixin</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A mixin class for indicators.</span>
 
 <span class="sd">    It provides a `__call__` method that calls the `compute` method of the</span>
@@ -337,7 +337,7 @@
 
 <div class="viewcode-block" id="IndicatorMixin.__call__">
 <a class="viewcode-back" href="../../autoapi/indicative/mixins/index.html#indicative.mixins.IndicatorMixin.__call__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Calls the `compute` method of the indicator.</span>
 
 <span class="sd">        Args:</span>
@@ -352,7 +352,7 @@
 
 <div class="viewcode-block" id="IndicatorMixin.__ror__">
 <a class="viewcode-back" href="../../autoapi/indicative/mixins/index.html#indicative.mixins.IndicatorMixin.__ror__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__ror__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__ror__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Calls the indicator with the given arguments.</span>
 
 <span class="sd">        Args:</span>
@@ -368,7 +368,7 @@
 
 <div class="viewcode-block" id="AdapterMixin">
 <a class="viewcode-back" href="../../autoapi/indicative/mixins/index.html#indicative.mixins.AdapterMixin">[docs]</a>
-<span class="k">class</span> <span class="nc">AdapterMixin</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AdapterMixin</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A mixin class that provides a `__call__` method to call a stored function.</span>
 
 <span class="sd">    The `__call__` method calls the stored function with the provided arguments.</span>
@@ -379,7 +379,7 @@
 
 <div class="viewcode-block" id="AdapterMixin.__call__">
 <a class="viewcode-back" href="../../autoapi/indicative/mixins/index.html#indicative.mixins.AdapterMixin.__call__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the stored function with the provided arguments.</span>
 
 <span class="sd">        Args:</span>
@@ -396,7 +396,7 @@
 
 <div class="viewcode-block" id="SelectMixin">
 <a class="viewcode-back" href="../../autoapi/indicative/mixins/index.html#indicative.mixins.SelectMixin">[docs]</a>
-<span class="k">class</span> <span class="nc">SelectMixin</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SelectMixin</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A mixin that provides a `__call__` method to call a stored selection function.</span>
 
 <span class="sd">    The `__call__` method calls the stored selection function with the provided</span>
@@ -408,7 +408,7 @@
 
 <div class="viewcode-block" id="SelectMixin.__call__">
 <a class="viewcode-back" href="../../autoapi/indicative/mixins/index.html#indicative.mixins.SelectMixin.__call__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the stored selection function with the provided arguments.</span>
 
 <span class="sd">        Args:</span>
@@ -423,7 +423,7 @@
 
 <div class="viewcode-block" id="SelectMixin.__ror__">
 <a class="viewcode-back" href="../../autoapi/indicative/mixins/index.html#indicative.mixins.SelectMixin.__ror__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__ror__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__ror__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the stored selection function with the given iterable.</span>
 
 <span class="sd">        Args:</span>

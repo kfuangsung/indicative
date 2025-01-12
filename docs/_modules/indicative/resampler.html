@@ -29,7 +29,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
   
   <!-- So that users can add custom icons -->
@@ -318,27 +318,27 @@
                 <article class="bd-article">
                   
   <h1>Source code for indicative.resampler</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 
-<span class="kn">import</span> <span class="nn">enum</span>
-<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Self</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">enum</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Self</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">PositiveInt</span>
-<span class="kn">from</span> <span class="nn">pydantic.dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">PositiveInt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic.dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
 
-<span class="kn">from</span> <span class="nn">.datas</span> <span class="kn">import</span> <span class="n">PriceDataArray</span><span class="p">,</span> <span class="n">PriceDataPoint</span>
-<span class="kn">from</span> <span class="nn">.history</span> <span class="kn">import</span> <span class="n">History</span><span class="p">,</span> <span class="n">Record</span>
-<span class="kn">from</span> <span class="nn">.protocols</span> <span class="kn">import</span> <span class="n">NamedTupleProtocol</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.datas</span><span class="w"> </span><span class="kn">import</span> <span class="n">PriceDataArray</span><span class="p">,</span> <span class="n">PriceDataPoint</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.history</span><span class="w"> </span><span class="kn">import</span> <span class="n">History</span><span class="p">,</span> <span class="n">Record</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.protocols</span><span class="w"> </span><span class="kn">import</span> <span class="n">NamedTupleProtocol</span>
 
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">.types</span> <span class="kn">import</span> <span class="n">Timestamp</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timestamp</span>
 
 
 <div class="viewcode-block" id="TimeUnit">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.TimeUnit">[docs]</a>
-<span class="k">class</span> <span class="nc">TimeUnit</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">StrEnum</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TimeUnit</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">StrEnum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    TimeUnit is an enumeration of time units.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -364,7 +364,7 @@
 
 <div class="viewcode-block" id="calc_timedelta">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.calc_timedelta">[docs]</a>
-<span class="k">def</span> <span class="nf">calc_timedelta</span><span class="p">(</span><span class="n">unit</span><span class="p">:</span> <span class="n">TimeUnit</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">PositiveInt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_timedelta</span><span class="p">(</span><span class="n">unit</span><span class="p">:</span> <span class="n">TimeUnit</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">PositiveInt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate a pandas Timedelta object.</span>
 
@@ -381,7 +381,7 @@
 
 <div class="viewcode-block" id="calc_next_timestamp">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.calc_next_timestamp">[docs]</a>
-<span class="k">def</span> <span class="nf">calc_next_timestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">:</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">timedelta</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_next_timestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">:</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">timedelta</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the next timestamp given a starting timestamp and a timedelta.</span>
 
@@ -398,7 +398,7 @@
 
 <div class="viewcode-block" id="append_latest">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.append_latest">[docs]</a>
-<span class="k">def</span> <span class="nf">append_latest</span><span class="p">(</span><span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">,</span> <span class="n">input_</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">append_latest</span><span class="p">(</span><span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">,</span> <span class="n">input_</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Append the latest PriceDataPoint to the history.</span>
 
@@ -415,7 +415,7 @@
 
 <div class="viewcode-block" id="pop_latest">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.pop_latest">[docs]</a>
-<span class="k">def</span> <span class="nf">pop_latest</span><span class="p">(</span><span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">,</span> <span class="n">input_</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pop_latest</span><span class="p">(</span><span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">,</span> <span class="n">input_</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Pop the latest data point from the history if it already exists.</span>
 
@@ -435,7 +435,7 @@
 
 <div class="viewcode-block" id="replace_latest">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.replace_latest">[docs]</a>
-<span class="k">def</span> <span class="nf">replace_latest</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">replace_latest</span><span class="p">(</span>
     <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">,</span>
     <span class="n">input_</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">,</span>
     <span class="n">next_timestamp</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">,</span>
@@ -468,7 +468,7 @@
 <span class="nd">@dataclass</span>
 <div class="viewcode-block" id="Resampler">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.Resampler">[docs]</a>
-<span class="k">class</span> <span class="nc">Resampler</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Resampler</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A resampler to resample a stream of PriceDataPoint into a fixed interval.</span>
 
@@ -493,7 +493,7 @@
 
 <div class="viewcode-block" id="Resampler.resample">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.Resampler.resample">[docs]</a>
-    <span class="k">def</span> <span class="nf">resample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">,</span> <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">resample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_</span><span class="p">:</span> <span class="n">PriceDataPoint</span><span class="p">,</span> <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Resample a stream of PriceDataPoint into a fixed interval.</span>
 
@@ -527,7 +527,7 @@
 
 <div class="viewcode-block" id="Resampler.check_history">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.Resampler.check_history">[docs]</a>
-    <span class="k">def</span> <span class="nf">check_history</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_history</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if the history object has the timestamp field. If not, register it.</span>
 
@@ -543,7 +543,7 @@
 
 <div class="viewcode-block" id="Resampler.is_empty_timestamp">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.Resampler.is_empty_timestamp">[docs]</a>
-    <span class="k">def</span> <span class="nf">is_empty_timestamp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty_timestamp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">history</span><span class="p">:</span> <span class="n">History</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check if the timestamp field of the history object is empty.</span>
 
@@ -561,7 +561,7 @@
 <span class="nd">@dataclass</span>
 <div class="viewcode-block" id="HistoryWithResampler">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler">[docs]</a>
-<span class="k">class</span> <span class="nc">HistoryWithResampler</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">HistoryWithResampler</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Combines a History object with a Resampler for managing and resampling data points.</span>
 
 <span class="sd">    Attributes:</span>
@@ -585,7 +585,7 @@
     <span class="nd">@property</span>
 <div class="viewcode-block" id="HistoryWithResampler.records">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.records">[docs]</a>
-    <span class="k">def</span> <span class="nf">records</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Record</span><span class="p">[</span><span class="nb">object</span><span class="p">]]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">records</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Record</span><span class="p">[</span><span class="nb">object</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets the records from the history.</span>
 
 <span class="sd">        Returns:</span>
@@ -597,7 +597,7 @@
     <span class="nd">@property</span>
 <div class="viewcode-block" id="HistoryWithResampler.fields">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.fields">[docs]</a>
-    <span class="k">def</span> <span class="nf">fields</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fields</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets the field names from the history.</span>
 
 <span class="sd">        Returns:</span>
@@ -608,7 +608,7 @@
 
 <div class="viewcode-block" id="HistoryWithResampler.__getitem__">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.__getitem__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Record</span><span class="p">[</span><span class="nb">object</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Record</span><span class="p">[</span><span class="nb">object</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Accesses a record by its name.</span>
 
 <span class="sd">        Args:</span>
@@ -622,7 +622,7 @@
 
 <div class="viewcode-block" id="HistoryWithResampler.__or__">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.__or__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Callable</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Callable</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Allows using the `|` operator for applying a callable to the history.</span>
 
 <span class="sd">        Args:</span>
@@ -636,7 +636,7 @@
 
 <div class="viewcode-block" id="HistoryWithResampler.__ror__">
 <a class="viewcode-back" href="../../autoapi/indicative/resampler/index.html#indicative.resampler.HistoryWithResampler.__ror__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__ror__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__ror__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">other</span><span class="p">:</span> <span class="n">PriceDataPoint</span> <span class="o">|</span> <span class="n">PriceDataArray</span> <span class="o">|</span> <span class="n">NamedTupleProtocol</span> <span class="o">|</span> <span class="n">Iterable</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>

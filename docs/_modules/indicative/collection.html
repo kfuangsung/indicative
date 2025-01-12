@@ -29,7 +29,7 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
   
   <!-- So that users can add custom icons -->
@@ -318,16 +318,16 @@
                 <article class="bd-article">
                   
   <h1>Source code for indicative.collection</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Callable</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
 
-<span class="kn">from</span> <span class="nn">pydantic.dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic.dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
 
 
 <span class="nd">@dataclass</span>
 <div class="viewcode-block" id="Collection">
 <a class="viewcode-back" href="../../autoapi/indicative/collection/index.html#indicative.collection.Collection">[docs]</a>
-<span class="k">class</span> <span class="nc">Collection</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Collection</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A collection of functions that can be called in parallel.</span>
 
 <span class="sd">    Attributes:</span>
@@ -344,7 +344,7 @@
 
 <div class="viewcode-block" id="Collection.__call__">
 <a class="viewcode-back" href="../../autoapi/indicative/collection/index.html#indicative.collection.Collection.__call__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Calls each function in `fns` with the same arguments.</span>
 
 <span class="sd">        Args:</span>
@@ -359,7 +359,7 @@
 
 <div class="viewcode-block" id="Collection.__ror__">
 <a class="viewcode-back" href="../../autoapi/indicative/collection/index.html#indicative.collection.Collection.__ror__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__ror__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__ror__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Allows using the `|` operator for calling the functions in `fns`.</span>
 
 <span class="sd">        Args:</span>
